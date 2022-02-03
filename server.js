@@ -1,21 +1,23 @@
-const path = require('path');
+// const path = require('path');
 const express = require('express');
-const routes = require('./routes');
+const routes = require('./controllers');
+const sequelize = require('./config/connection')
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-app.get('/', (req,res) => {
-    res.send('Testing');
-});
+// app.get('/', (req,res) => {
+//     res.send('Testing');
+// });
 
 
-app.listen(PORT, () => {
-    console.log(`API server now on port ${PORT}!`);
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
   });
