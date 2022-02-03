@@ -13,7 +13,7 @@ Solution.init(
       autoIncrement: true,
     },
 
-    question: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
