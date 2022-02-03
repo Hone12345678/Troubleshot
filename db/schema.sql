@@ -1,0 +1,5 @@
+-- DROP DATABASE
+DROP DATABASE IF EXISTS troubleshot_db;
+
+-- CREATE DATABASE
+CREATE DATABASE troubleshot_db;
