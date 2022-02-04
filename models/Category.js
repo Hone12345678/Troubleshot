@@ -18,7 +18,7 @@ Category.init(
       allowNull: false,
     },
 
-    tag_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "user",

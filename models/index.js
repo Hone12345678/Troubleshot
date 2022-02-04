@@ -2,7 +2,7 @@
 const Category = require('./Category');
 const Solution = require('./Solution');
 const SolveTag = require('./SolveTag');
-const Tags = require('./Tags');
+const Tag = require('./Tag');
 const User = require('./User');
 
 //User has many Solutions 
@@ -16,6 +16,6 @@ module.exports = {
     Category,
     Solution,
     SolveTag,
-    Tags,
+    Tag,
     User,
   };

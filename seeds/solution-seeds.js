@@ -3,16 +3,15 @@ const { Solution } = require('../models');
 
 const solutionData = [
   {
-    category_id: 1,
-    user_id: 1,
     name: "server.js setup",
-    solve: "const path = require('path'); const express = require('express');" 
+    solution: "const path = require('path'); const express = require('express');",
+    priority: 1, 
+    category_id: 1,
+    user_id: 1
   },
   {
-    category_id: 2,
-    user_id: 1,
     name: "tailwind.config.js setup",
-    solve: `
+    solution: `
     module.exports = {
       content: [
         "./src/**/*.{html,js}",
@@ -23,56 +22,60 @@ const solutionData = [
       },
       plugins: [],
     }
-    `
+    `,
+    priority: 1,
+    category_id: 2,
+    user_id: 1
   },
   {
-    category_id: 3,
-    user_id: 1,
     name: "Purpose",
-    solve: "Npm package that helps you create a server"
+    solution: "Npm package that helps you create a server",
+    priority: 3,
+    category_id: 3,
+    user_id: 1
 
   },
   {
-    category_id: 4,
-    user_id: 2,
     name: "half and half subsitutions",
-    solve: "you can subsitute equal parts whole milk and melted butter for half and half"
-
-  },
-  {
+    solution: "you can subsitute equal parts whole milk and melted butter for half and half",
+    priority: 5,
     category_id: 4,
-    user_id: 2,
+    user_id: 2
+  },
+  {
     name: "ounces",
-    solve: "there are 8 liquid ounces to a cup, but 16 ounces to a pound"
-
+    solution: "there are 8 liquid ounces to a cup, but 16 ounces to a pound",
+    priority: 2,
+    category_id: 4,
+    user_id: 2
   },
   {
-    category_id: 5,
-    user_id: 2,
     name: "pythagorean theorem",
-    solve: "a^2 + b^2 = C^2"
-
+    solution: "a^2 + b^2 = C^2",
+    priority: 5,
+    category_id: 5,
+    user_id: 2
   },
   {
-    category_id: 6,
-    user_id: 3,
     name: "Delimiting data",
-    solve: "1. Highlight the column you want to parse 2. Data drop down 3. Text to columes"
-
-  },
-  {
+    solution: "1. Highlight the column you want to parse 2. Data drop down 3. Text to columes",
+    priority: 1,
     category_id: 6,
-    user_id: 3,
-    name: "Monthly Report Location",
-    solve: "Q:/Archive/monthly"
-
+    user_id: 3
   },
   {
-    category_id: 7,
-    user_id: 3,
+    name: "Monthly Report Location",
+    solution: "Q:/Archive/monthly",
+    priority: 4,
+    category_id: 6,
+    user_id: 3
+  },
+  {
     name: "Metal Archives",
-    solve: "https://www.metal-archives.com/"
-
+    solution: "https://www.metal-archives.com/",
+    priority: 5,
+    category_id: 7,
+    user_id: 3
   }
 ];
 
