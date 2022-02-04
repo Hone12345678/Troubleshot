@@ -10,7 +10,7 @@ module.exports = {
         'pulse-slow': 'pulse 2s ease-in-out infinite',
       },
       width: {
-        '45': "45%",
+        '45': '45%',
       },
       screens: {
         'xs': '325px',
