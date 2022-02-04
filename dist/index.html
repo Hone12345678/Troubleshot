@@ -9,62 +9,92 @@
 <body class="bg-slate-800">
 
   <!-- Header Section -->
-  <header class="flex flex-wrap grid grid-cols-4 items-center py-4 border-b-2 sticky top-0 w-full lg:z-50 lg:border-zinc-500 min-h-full">
-    <div class="flex justify-end flex-shrink-0 ml-6">
-      <img class="animate-pulse-slow" src="https://img.icons8.com/ios/50/fa314a/accuracy.png"/>
-      <h1 class="text-slate-200 font-bold text-4xl">Troubleshot</h1>
-    </div>
-    <div>
-      <p class="opacity-0">placeholder</p>
-    </div>
-    </div>
-    <div class="flex justify-end text-violet-500 font-bold text-2xl">
-      <div class="pr-12 hover:text-violet-700">
-        <a href='/dashboard'>Dashboard</a>
-      </div>
-      <div class="hover:opacity-50">
-        <a href='/create'><img src="https://img.icons8.com/nolan/30/add.png"/></a>
+  <header class="flex flex-wrap md:justify-between items-center text-center py-4 border-b-2 top-0 w-full border-zinc-500 min-h-full">
+    <div class="flex flex-wrap justify-left items-center xs:justify-center">
+      <img class="animate-pulse-slow pl-4" src="https://img.icons8.com/ios/50/fa314a/accuracy.png"/>
+      <h1 class="text-slate-200 font-bold text-4xl pr-4 md:border-r-2 border-zinc-500">Troubleshot</h1>
+    
+      <div class="flex md:justify-left xs:justify-center pt-1 pl-12 inline-block text-slate-400 text-3xl">
+        <div class="pr-12 xs:justify-center align-middle hover:text-slate-600">
+          <a href='/dashboard'>Dashboard</a>
+        </div>
+        <div class="pr-32 xs:justify-center align-middle hover:opacity-50">
+          <a href='/create'><img src="https://img.icons8.com/nolan/40/add.png"/></a>
+        </div>
       </div>
     </div>
-    <div class="flex justify-end pr-12">
-        <button id="login" class="bg-slate-500 hover:bg-slate-400 text-slate-100 font-bold py-2 px-4 rounded shadow-xl inline-block leading-none">
-          Login
-        </button>
-    </div>
+
+        <div class="flex justify-end pr-12 text-md space-x-2">
+            <button id="login" class="bg-slate-500 hover:bg-slate-400 text-slate-100 font-bold py-2 px-4 rounded shadow-xl inline-block leading-none">
+              Login
+            </button>
+            <button id="signup" class="bg-slate-500 hover:bg-slate-400 text-slate-100 font-bold py-2 px-4 rounded shadow-xl inline-block leading-none">
+              Signup
+            </button>
+        </div>
   </header>
 
   <!-- Page Navigation -->
-  <div class="grid grid-cols-10">
-  <nav class="col-span-3 fixed pt-20 py-3 px-10 text-slate-100 rounded border-zinc-500 border-r-2 w-48 overflow-y-auto">
-    <ul class="pb-8">
-      <li>Topic</li>
-        <ul>
-        <li class="px-4 text-slate-500"><a class="hover:text-slate-300" href=''>placeholder</a></li>
-        <li class="px-4 text-slate-500"><a class="hover:text-slate-300" href=''>placeholder</a></li>
-        </ul>
-    </ul>
-    <ul class="pb-8">
-      <li>Topic</li>
-        <ul>
-        <li class="px-4 text-slate-500"><a class="hover:text-slate-300" href=''>placeholder</a></li>
-        <li class="px-4 text-slate-500"><a class="hover:text-slate-300" href=''>placeholder</a></li>
-        </ul>
-    </ul>
-    <ul class="pb-8">
-      <li>Topic</li>
-        <ul>
-        <li class="px-4 text-slate-500"><a class="hover:text-slate-300" href=''>placeholder</a></li>
-        <li class="px-4 text-slate-500"><a class="hover:text-slate-300" href=''>placeholder</a></li>
-        </ul>
-    </ul>
-  </nav> 
+  <main class="lg:flex justify center min-h-screen relative">
+    <div class="flex flex-wrap flex-col relative text-center pt-10 py-3 px-6 text-slate-100 border-zinc-500 lg:border-r-2 md:w-1/6">
+    <nav class="col-span-3">
+      <div class="relative mx-auto text-gray-600 m-w-s pb-8">
+        <input class="border-2 border-gray-300 bg-white h-8 rounded-lg text-sm focus:outline-none"
+          type="search" name="search" placeholder="Search">
+          <button type="submit" class="justify-self-start mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500">
+            submit
+          </button>
+      </div>
+      <ul class="pb-8 justify-between">
+        <button id="Javascript" class="bg-slate-500 hover:bg-slate-400 text-slate-100 py-2 mb-2 xs:w-45 text-center rounded shadow-xl">
+          Javascript
+        </button>
+        <button id="Tailwind" class="bg-slate-500 hover:bg-slate-400 text-slate-100 py-2 mb-2 xs:w-45 text-center rounded shadow-xl ">
+          Tailwind
+        </button>
+        <button id="ExpressJS" class="bg-slate-500 hover:bg-slate-400 text-slate-100 py-2 mb-2 xs:w-45 text-center rounded shadow-xl ">
+          ExpressJS
+        </button>
+        <button id="Cooking" class="bg-slate-500 hover:bg-slate-400 text-slate-100 py-2 mb-2 xs:w-45 text-center rounded shadow-xl">
+          Cooking
+        </button>
+        <button id="Trig" class="bg-slate-500 hover:bg-slate-400 text-slate-100 py-2 mb-2 xs:w-45 text-center rounded shadow-xl ">
+          Trig
+        </button>
+        <button id="Excel" class="bg-slate-500 hover:bg-slate-400 text-slate-100 py-2 mb-2 xs:w-45 text-center rounded shadow-xl ">
+          Excel
+        </button>
+        <button id="Music" class="bg-slate-500 hover:bg-slate-400 text-slate-100 py-2 mb-2 xs:w-45 text-center rounded shadow-xl ">
+          Music
+        </button>
+      </ul>
+    </nav> 
+</div>
 
-  <!-- Main Section -->
-  <div class="col-span-7 flex flex-wrap px-52 py-10 ">
-    <h1 class="text-3xl text-slate-100 font-bold underline">
-      Hello world!
-    </h1>
+  <!-- Content Section -->
+  <div class="flex flex-shrink justify-center">
+    <div class="lg:pt-20 text-center align-middle text-xl">
+      <div class="pb-8 pr-24 text-center">
+        <button id="highestPriority" class="bg-red-600 hover:bg-red-800 text-slate-100 font-bold py-2 px-4 pb-5 mb-2 w-48 rounded shadow-xl inline-block leading-none">
+          Highest Priority
+        </button>
+        <button id="mostSelected" class="bg-blue-600 hover:bg-blue-800 text-slate-100 font-bold py-2 px-4 pb-5 mb-2 w-48 rounded shadow-xl inline-block leading-none">
+          Most Selected
+        </button>
+        <button id="mostViewed" class="bg-indigo-500 hover:bg-indigo-700 text-slate-100 font-bold py-2 px-4 pb-5 mb-2 w-48 rounded shadow-xl inline-block leading-none">
+          Most Viewed
+        </button>
+      </div>
+
+      <div class="space-y-6">
+        <h2 class="text-center pr-24 underline text-zinc-300 text-2xl">Content Title</h2>
+        <p class="xs:pl-36 flex-wrap text-left w-3/4 text-slate-400 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, blanditiis.</p>
+        <p class="xs:pl-36 flex-wrap text-left w-3/4 text-slate-400 text-base">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, impedit deserunt accusantium maxime nobis asperiores fugiat amet pariatur nesciunt dolores recusandae ipsa tenetur iste error. Nobis molestias eveniet sequi obcaecati?!</p>
+        <p class="xs:pl-36 flex-wrap text-left w-3/4 text-slate-400 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolor doloremque cum laborum sequi, modi culpa, nostrum corrupti ipsa nesciunt veniam repudiandae labore? Eligendi, quia consequatur corporis aspernatur delectus harum?</p>
+      </div>
+    </div>
   </div>
-  </div>
+  </main>
+
 </body>
 </html>
