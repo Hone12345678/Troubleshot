@@ -4,7 +4,12 @@ module.exports = {
     './dist/index.html',
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'spin-slow': 'spin 2s linear infinite',
+        'pulse-slow': 'pulse 2s ease-in-out infinite',
+      }
+    },
   },
   plugins: [],
 }
