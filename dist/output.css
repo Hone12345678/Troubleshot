@@ -468,17 +468,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
-.fixed {
-  position: fixed;
-}
-
 .relative {
   position: relative;
-}
-
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
 }
 
 .top-0 {
@@ -526,6 +517,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
+.w-48 {
+  width: 12rem;
+}
+
+.w-3\/4 {
+  width: 75%;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
 @-webkit-keyframes pulse {
   50% {
     opacity: .5;
@@ -571,6 +574,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
 .justify-self-start {
@@ -700,8 +709,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 2rem;
 }
 
-.pt-20 {
-  padding-top: 5rem;
+.pr-24 {
+  padding-right: 6rem;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-center {
@@ -727,9 +744,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1.25rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .font-bold {
@@ -765,9 +792,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-slate-300 {
+.text-zinc-300 {
   --tw-text-opacity: 1;
-  color: rgb(203 213 225 / var(--tw-text-opacity));
+  color: rgb(212 212 216 / var(--tw-text-opacity));
+}
+
+.underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }
 
 .shadow-xl {
@@ -825,8 +857,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 1024px) {
+  .lg\:flex {
+    display: flex;
+  }
+
   .lg\:border-r-2 {
     border-right-width: 2px;
+  }
+
+  .lg\:pt-20 {
+    padding-top: 5rem;
   }
 }
 
@@ -837,5 +877,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .xs\:justify-center {
     justify-content: center;
+  }
+
+  .xs\:pl-36 {
+    padding-left: 9rem;
   }
 }
