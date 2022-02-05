@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 
-const sequelize = require("../config/connection.js");
+const sequelize = require("../../Troubleshot/config/connection.js");
 
 class SolveTag extends Model {}
 

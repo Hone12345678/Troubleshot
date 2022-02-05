@@ -22,11 +22,6 @@ app.get('/', (req, res) => {
   res.render('home');
 });
 
-// app.get('/', (req,res) => {
-//     res.send('Testing');
-// });
-
-
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
   });
