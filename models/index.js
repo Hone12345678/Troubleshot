@@ -14,20 +14,11 @@ User.hasMany(Category, {
 Category.belongsTo(User, {
     foreignKey: 'user_id'
 })
-// // category has only one user
-// Category.hasOne(User,{
-//     foreignKey: 'user_id'
-// })
 
 // category has many solution
 Category.hasMany(Solution,{
     foreignKey: 'category_id'
 })
-
-// // solution has one category
-// Solution.hasOne(Category, {
-//     foreignKey: 'category_id'
-// })
 
 // solution belongs to one category
 Solution.belongsTo(Category,{
