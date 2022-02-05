@@ -6,6 +6,8 @@
   <link href="../dist/output.css" rel="stylesheet">
 </head>
 
+
+
 <body class="bg-slate-800">
 
   <!-- Header Section -->
@@ -13,7 +15,6 @@
     <div class="flex flex-wrap justify-left items-center xs:justify-center">
       <img class="animate-pulse-slow pl-4" src="https://img.icons8.com/ios/50/fa314a/accuracy.png"/>
       <h1 class="text-slate-200 font-bold text-4xl pr-4 md:border-r-2 border-zinc-500">Troubleshot</h1>
-    
       <div class="flex md:justify-left xs:justify-center pt-1 pl-12 inline-block text-slate-400 text-3xl">
         <div class="pr-12 xs:justify-center align-middle hover:text-slate-600">
           <a href='/dashboard'>Dashboard</a>
@@ -23,8 +24,14 @@
         </div>
       </div>
     </div>
-
-        <div class="flex justify-end pr-12 text-md space-x-2">
+    {{#if loggedIn}}
+    <div class="flex justify-end pr-12 text-md space-x-2">
+            <button id="logout" class="bg-slate-500 hover:bg-slate-400 text-slate-100 font-bold py-2 px-4 rounded shadow-xl inline-block leading-none">
+              Logout
+            </button>
+        </div>
+    {{else}}
+  <div class="flex justify-end pr-12 text-md space-x-2">
             <button id="login" class="bg-slate-500 hover:bg-slate-400 text-slate-100 font-bold py-2 px-4 rounded shadow-xl inline-block leading-none">
               Login
             </button>
@@ -32,12 +39,20 @@
               Signup
             </button>
         </div>
+    {{/if}}
+
+
   </header>
+
+ {{#if loggedIn}}
 
   <!-- Page Navigation -->
   <main class="lg:flex justify center min-h-screen relative">
     {{{ body }}}
   </main>
+
+  {{/if}}
+
 
 </body>
 </html>
