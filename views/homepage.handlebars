@@ -11,7 +11,7 @@
       <ul class="pb-8 justify-between">
         {{#each categories as |category|}}
         <button id="{{category.category_name}}" class="bg-slate-500 hover:bg-slate-400 text-slate-100 py-2 mb-2 xs:w-45 text-center rounded shadow-xl ">
-          {{category.category_name}}
+          {{capital_category category.category_name}}
         </button>
         {{!-- <button id="Javascript" class="bg-slate-500 hover:bg-slate-400 text-slate-100 py-2 mb-2 xs:w-45 text-center rounded shadow-xl">
           Javascript
