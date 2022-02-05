@@ -14,20 +14,11 @@ User.hasMany(Category, {
 Category.belongsTo(User, {
     foreignKey: 'user_id'
 })
-// category has only one user
-// Category.hasOne(User,{
-//     foreignKey: 'user_id'
-// })
 
 // category has many solution
 Category.hasMany(Solution,{
     foreignKey: 'category_id'
 })
-
-// solution has one category
-// Solution.hasOne(Category, {
-//     foreignKey: 'category_id'
-// })
 
 // solution belongs to one category
 Solution.belongsTo(Category,{
@@ -39,17 +30,17 @@ User.hasMany(Solution,{
     foreignKey: 'user_id'
 })
 
+// // solution belongs to many tags
+// Solution.hasMany(Tag,{
+//     foreignKey: 'solution_id'
+// })
+
 // solution has many tags
 Solution.hasMany(Tag,{
     foreignKey: 'solution_id'
 })
 
-// solution belongs to many tags
-// Solution.hasMany(Tag,{
-//     foreignKey: 'solution_id'
-// })
-
-// tag has many solutions
+// // tag has many solutions
 // Tag.hasMany(Solution,{
 //     foreignKey: 'tag_id'
 // })
