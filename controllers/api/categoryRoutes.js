@@ -14,7 +14,7 @@ router.get("/:id", (req, res) => {
   Category.findOne({
     where: {
       id: req.params.id,
-    },
+    }
   })
     .then((dbCategoryData) => res.json(dbCategoryData))
     .catch((err) => {
@@ -44,7 +44,7 @@ router.put('/:id', (req, res) => {
     },
     category_name: req.body.category_name,
   })
-    .then(dbCommentData => res.json(dbCommentData))
+    .then(dbCategoryData => res.json(dbCategoryData))
     .catch(err => {
       console.log(err);
       res.status(400).json(err);

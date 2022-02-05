@@ -22,7 +22,7 @@ Category.hasMany(Solution,{
 
 // solution belongs to one category
 Solution.belongsTo(Category,{
-    foreignKey: 'solution_id'
+    foreignKey: 'category_id'
 })
 
 // user has many solutions
@@ -30,25 +30,16 @@ User.hasMany(Solution,{
     foreignKey: 'user_id'
 })
 
-// // solution belongs to many tags
-// Solution.hasMany(Tag,{
-//     foreignKey: 'solution_id'
-// })
-
 // solution has many tags
-Solution.hasMany(Tag,{
-    foreignKey: 'solution_id'
+Solution.belongsToMany(Tag,{
+    through: SolveTag
 })
-
-// // tag has many solutions
-// Tag.hasMany(Solution,{
-//     foreignKey: 'tag_id'
-// })
 
 // tag belongs to many solutions
-Tag.belongsTo(Solution,{
-    foreignKey: 'solution_id'
+Tag.belongsToMany(Solution,{
+    through: SolveTag
 })
+
 
 
 
