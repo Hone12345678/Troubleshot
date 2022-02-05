@@ -1,0 +1,39 @@
+<div class="flex flex-wrap flex-col relative text-center pt-10 py-3 px-6 text-slate-100 border-zinc-500 lg:border-r-2 md:w-1/6">
+    <nav class="col-span-3">
+      <form class="relative mx-auto text-gray-600 m-w-s pb-8">
+        <input class="border-2 border-gray-300 bg-white h-8 rounded-lg text-sm focus:outline-none"
+          type="search" name="search" placeholder="Search">
+          <button type="submit" class="justify-self-start mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded">
+            submit
+          </button>
+      </form>
+        {{!-- dynamically generate category buttons --}}
+        {{> category-buttons categories}}
+      <ul class="pb-8 justify-between">
+        
+      </ul>
+    </nav> 
+</div>
+
+  <!-- Content Section -->
+  <div class="flex flex-shrink justify-center">
+    <div class="lg:pt-20 text-center align-middle text-xl">
+      <div class="pb-8 pr-24 text-center">
+        <button id="highestPriority" class="bg-red-600 hover:bg-red-800 text-slate-100 font-bold py-2 px-4 pb-5 mb-2 w-48 rounded shadow-xl inline-block leading-none">
+          Highest Priority
+        </button>
+        <button id="mostSelected" class="bg-blue-600 hover:bg-blue-800 text-slate-100 font-bold py-2 px-4 pb-5 mb-2 w-48 rounded shadow-xl inline-block leading-none">
+          Most Selected
+        </button>
+        <button id="mostViewed" class="bg-indigo-500 hover:bg-indigo-700 text-slate-100 font-bold py-2 px-4 pb-5 mb-2 w-48 rounded shadow-xl inline-block leading-none">
+          Most Viewed
+        </button>
+      </div>
+    {{!-- loop through the solutions array --}}
+    <div class="space-y-6">
+      {{> solution-content sol}}
+    </div>
+    </div>
+  </div>
+
+ <script src="/javascript/homepage.js"></script>
