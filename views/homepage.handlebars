@@ -8,12 +8,9 @@
           </button>
       </div>
         {{!-- dynamically generate category buttons --}}
+        {{> category-buttons categories}}
       <ul class="pb-8 justify-between">
-        {{#each categories as |category|}}
-        <button id="{{category.category_name}}" class="bg-slate-500 hover:bg-slate-400 text-slate-100 py-2 mb-2 xs:w-45 text-center rounded shadow-xl ">
-          {{capital_category category.category_name}}
-        </button>
-        {{/each}}
+        
       </ul>
     </nav> 
 </div>
@@ -33,12 +30,9 @@
         </button>
       </div>
     {{!-- loop through the solutions array --}}
-      {{#each sol as |solutions|}}
-      <div class="space-y-6">
-        <h2 class="text-center pr-24 underline text-zinc-300 text-2xl">{{capital_category solutions.name}}</h2>
-        <p class="xs:pl-36 flex-wrap text-left w-3/4 text-slate-400 text-base">{{solutions.solution}}</p>
-      </div>
-      {{/each}}
+    <div class="space-y-6">
+      {{> solution-content sol}}
+    </div>
     </div>
   </div>
 

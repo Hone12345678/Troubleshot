@@ -1,7 +1,7 @@
-const {capital_category} = require('../utils/helpers');
+const {capitalize_first} = require('../utils/helpers');
 
-test('capital_category() returns a string with the first letter capitalized', () => {
-  const word = capital_category('pizza');
+test('capitalize_first() returns a string with the first letter capitalized', () => {
+  const word = capitalize_first('pizza');
 
   expect(word).toBe('Pizza');
 });
