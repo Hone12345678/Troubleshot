@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Category, Solution, SolveTag, Tag, User } = require("../../models");
 
+//find all Solvetags
 router.get("/", (req, res) => {
   SolveTag.findAll()
     .then((dbSolveTagData) => res.json(dbSolveTagData))
@@ -10,6 +11,7 @@ router.get("/", (req, res) => {
     });
 });
 
+//find solvetag by id
 router.get("/:id", (req, res) => {
   SolveTag.findOne({
     where: {
@@ -23,6 +25,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
+//creates new solvetag
 router.post("/", (req, res) => {
   SolveTag.create(req.body, {
     solution_id: req.body.solution_id,
@@ -37,6 +40,7 @@ router.post("/", (req, res) => {
     });
 });
 
+//edits existing solve tag by id
 router.put("/:id", (req, res) => {
   SolveTag.update(req.body, {
     where: {
@@ -52,6 +56,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
+//deletes existing solvetag by id
 router.delete("/:id", (req, res) => {
   SolveTag.destroy({
     where: {

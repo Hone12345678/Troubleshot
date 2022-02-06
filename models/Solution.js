@@ -2,8 +2,10 @@ const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection.js");
 
+//create Solution model
 class Solution extends Model {}
 
+//generate Table for Solution model
 Solution.init(
   {
     id: {
