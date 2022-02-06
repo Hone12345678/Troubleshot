@@ -21,9 +21,15 @@
         <div class="pr-12 xs:justify-center align-middle hover:text-slate-600">
           <a href='/dashboard'>Dashboard</a>
         </div>
+      {{#if loggedIn}}
         <div class="pr-32 xs:justify-center align-middle hover:opacity-50">
-          <a href='/create'><img src="https://img.icons8.com/nolan/40/add.png" /></a>
+          <button id="addSolution"><img src="https://img.icons8.com/nolan/40/add.png" /></button>
         </div>
+         {{else}}
+         <div class="pr-32 xs:justify-center align-middle hover:opacity-50">
+          <button id="login"><img src="https://img.icons8.com/nolan/40/add.png" /></button>
+        </div>
+       {{/if}}
       </div>
     </div>
     {{#if loggedIn}}
@@ -44,8 +50,8 @@
         Signup
       </button>
     </div>
-
-    {{!-- modals --}}
+ {{/if}}
+   {{!-- modals --}}
     <div id="login-modal" class="modal" style="display:none;">
       <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
         <form class="login-form" id="login-form">
@@ -79,11 +85,35 @@
             <button id="modal-signup-btn" type="submit">signup</button>
           </div>
         </form>
-
       </div>
     </div>
-    {{/if}}
-
+    
+    <div id="addSolution-modal" class="modal" style="display:none;">
+      <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+        <form class="addSolution-form" id="addSolution-form">
+          <div>
+            <label for="category">What category does this fall under?</label>
+            <input type="text" id="category" />
+          </div>
+          <div>
+            <label for="name">What are you trying to solve?</label>
+            <input type="text" id="name" />
+          </div>
+          <div>
+            <label for="solution">What's the solution you found? </label>
+            <input type="text" id="solution" />
+          </div>
+          <div>
+            <label for="priority">What's the solution you found? </label>
+            <input type="text" id="priority" />
+          </div>
+           <label for="tag">What's the solution you found? </label>
+            <input type="text" id="tag" />
+          </div>
+          <div>
+            <button id="modal-addSolution-btn" type="submit">Create</button>
+          </div>
+        </form>
 
   </header>
 
@@ -93,10 +123,12 @@
   <main class="lg:flex justify center min-h-screen relative">
     {{{ body }}}
     <script src="/javascript/logout.js"></script>
+      <script src="/javascript/addSolution.js"></script>
   </main>
-  {{/if}}
-
+  {{else}}
   <script src="/javascript/login.js"></script>
+  {{/if}}
+  
 </body>
 
 </html>
