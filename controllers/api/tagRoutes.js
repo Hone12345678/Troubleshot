@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {Category, Solution, SolveTag, Tag, User} = require('../../models')
 
+//find all tags
 router.get("/", (req, res) => {
   Tag.findAll()
     .then((dbTagData) => res.json(dbTagData))
@@ -10,6 +11,7 @@ router.get("/", (req, res) => {
     });
 });
 
+//find tag by id
 router.get("/:id", (req, res) => {
   Tag.findOne({
     where: {
@@ -23,6 +25,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
+//create new tag
 router.post("/", (req, res) => {
   Tag.create(req.body, {
     tag_name: req.body.tag_name
@@ -36,6 +39,7 @@ router.post("/", (req, res) => {
     });
 });
 
+//update existing tags
 router.put("/:id", (req, res) => {
   Tag.update(req.body, {
     where: {
@@ -50,6 +54,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
+//delete existing tag
 router.delete("/:id", (req, res) => {
   Tag.destroy({
     where: {

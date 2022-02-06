@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {Category, Solution, SolveTag, Tag, User} = require('../../models')
 
+//find all users
 router.get("/", (req, res) => {
   User.findAll()
     .then((dbUserData) => res.json(dbUserData))
@@ -10,6 +11,7 @@ router.get("/", (req, res) => {
     });
 });
 
+//find user by id
 router.get("/:id", (req, res) => {
   User.findOne({
     where: {
@@ -23,6 +25,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
+//create a new user
 router.post('/', (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
@@ -45,6 +48,7 @@ router.post('/', (req, res) => {
     });
 });
 
+//user login and password validation
 router.post('/login', (req, res) => {
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
@@ -74,6 +78,7 @@ router.post('/login', (req, res) => {
   });
 });
 
+// user logout
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
@@ -85,6 +90,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
+//user update password by user id
 router.put('/:id', (req, res) => {
   // pass in req.body instead to only update what's passed through
   User.update(req.body, {
@@ -106,6 +112,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
+//delete existing user
 router.delete("/:id", (req, res) => {
   User.destroy({
     where: {

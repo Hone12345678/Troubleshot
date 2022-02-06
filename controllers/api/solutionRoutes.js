@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {Category, Solution, SolveTag, Tag, User} = require('../../models')
 
+//find all solutions
 router.get("/", (req, res) => {
   Solution.findAll()
     .then((dbSolutionData) => res.json(dbSolutionData))
@@ -10,6 +11,7 @@ router.get("/", (req, res) => {
     });
 });
 
+//find solution by id
 router.get("/:id", (req, res) => {
   Solution.findOne({
     where: {
@@ -23,6 +25,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
+//create a new solution
 router.post("/", (req, res) => {
   Solution.create(req.body, {
     name: req.body.name,
@@ -40,6 +43,7 @@ router.post("/", (req, res) => {
     });
 });
 
+//edit an existing solution
 router.put('/:id', (req, res) => {
   Solution.update(req.body, {
     where: {
@@ -54,7 +58,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-
+//delete an exisitng solution
 router.delete("/:id", (req, res) => {
   Solution.destroy({
     when: {
