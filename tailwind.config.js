@@ -1,3 +1,5 @@
+const { NOEXPAND } = require("sequelize/dist/lib/table-hints");
+
 module.exports = {
   content: [
     "./src/**/*.{html,js}",
@@ -20,6 +22,9 @@ module.exports = {
         'xl': '1280px',
         '2xl': '1536px',
       },
+      modal: {
+        'display': 'none'
+      }
     },
   },
   plugins: [],
