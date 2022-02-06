@@ -25,7 +25,8 @@ router.get('/', async (req, res) => {
     //send the new arrays to the homepage to be displayed on the home page
     res.render('homepage', {
       categories,
-      sol
+      sol, 
+      loggedIn: req.session.loggedIn
     })
   }
   catch (err) {
@@ -58,10 +59,12 @@ router.get('/highest-priority', async (req, res) => {
     const categories = categoryQuery.map(array => array.get({ plain: true }));
     const sol = solutionQuery.map(array => array.get({ plain: true }));
 
+    console.log(sol);
     //send the new arrays to the homepage to be displayed on the home page
     res.render('homepage', {
       categories,
-      sol
+      sol, 
+      loggedIn: req.session.loggedIn
     })
   }
   catch (err) {
