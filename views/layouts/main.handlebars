@@ -23,7 +23,7 @@
         </div>
       {{#if loggedIn}}
         <div class="pr-32 xs:justify-center align-middle hover:opacity-50">
-          <button id="addSolution"><img src="https://img.icons8.com/nolan/40/add.png" /></button>
+          <button id="addCategory"><img src="https://img.icons8.com/nolan/40/add.png" /></button>
         </div>
          {{else}}
          <div class="pr-32 xs:justify-center align-middle hover:opacity-50">
@@ -88,30 +88,15 @@
       </div>
     </div>
     
-    <div id="addSolution-modal" class="modal" style="display:none;">
+    <div id="addCategory-modal" class="modal" style="display:none;">
       <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-        <form class="addSolution-form" id="addSolution-form">
+        <form class="addCategory-form" id="addCategory-form">
           <div>
-            <label for="category">What category does this fall under?</label>
+            <label for="category">What would you like your category to be called?</label>
             <input type="text" id="category" />
           </div>
           <div>
-            <label for="name">What are you trying to solve?</label>
-            <input type="text" id="name" />
-          </div>
-          <div>
-            <label for="solution">What's the solution you found? </label>
-            <input type="text" id="solution" />
-          </div>
-          <div>
-            <label for="priority">What's the solution you found? </label>
-            <input type="text" id="priority" />
-          </div>
-           <label for="tag">What's the solution you found? </label>
-            <input type="text" id="tag" />
-          </div>
-          <div>
-            <button id="modal-addSolution-btn" type="submit">Create</button>
+            <button id="modal-addCategory-btn" type="submit">Create</button>
           </div>
         </form>
 
@@ -123,7 +108,7 @@
   <main class="lg:flex justify center min-h-screen relative">
     {{{ body }}}
     <script src="/javascript/logout.js"></script>
-      <script src="/javascript/addSolution.js"></script>
+      <script src="/javascript/addCategory.js"></script>
   </main>
   {{else}}
   <script src="/javascript/login.js"></script>
