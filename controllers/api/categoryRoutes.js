@@ -26,11 +26,24 @@ router.get("/:id", (req, res) => {
     });
 });
 
+//find categories by id specific to the user
+// router.get("/", (req, res) => {
+//   Category.findAll({
+//     where: {
+//       user_id: req.session.user_id,
+//     }
+//   })
+//     .then((dbCategoryData) => res.json(dbCategoryData))
+//     .catch((err) => {
+//       console.log(err);
+//       res.status(500).json(err);
+//     });
+// });
+
 //create a new category
 router.post("/", (req, res) => {
-  console.log(req.body)
   console.log('---------hello--------');
-  console.log(req.session);
+  req.body.user_id = req.session.user_id;
   Category.create(req.body, {
     category_name: req.body.category_name,
     user_id: req.body.user_id,
@@ -62,7 +75,7 @@ router.put('/:id', (req, res) => {
 //delete an existing category
 router.delete("/:id", (req, res) => {
   Category.destroy({
-    when: {
+    where: {
       id: req.params.id,
     },
   })

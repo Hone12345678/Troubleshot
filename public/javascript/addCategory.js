@@ -5,6 +5,8 @@ async function createCategoryHandler(event) {
 
   const category = document.querySelector('#category').value.trim();
 
+  console.log('------testing--------');
+
 const response = await fetch(`/api/categories`, {
     method: 'POST',
     body: JSON.stringify({ 
@@ -23,6 +25,6 @@ const response = await fetch(`/api/categories`, {
   }
 }
 
-document.querySelector('#modal-addCategory-btn').addEventListener('submit', createCategoryHandler);
+document.querySelector('#modal-addCategory-btn').addEventListener('click', createCategoryHandler);
 
 document.querySelector('#addCategory').addEventListener('click', () => {modal.style.display="block"})
