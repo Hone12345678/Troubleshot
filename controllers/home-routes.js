@@ -8,7 +8,10 @@ router.get('/', async (req, res) => {
     const categoryQuery = await Category.findAll({
       attributes: [
         'category_name'
-      ]
+      ],
+      where: {
+        user_id: req.session.user_id
+      }
     });
     const solutionQuery = await Solution.findAll({
       //query for the top 3 results
