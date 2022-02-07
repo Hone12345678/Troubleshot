@@ -1,9 +1,11 @@
 const { Model, DataTypes } = require("sequelize");
 
-const sequelize = require("../config/connection.js");
+const sequelize = require("../../Troubleshot/config/connection.js");
 
+//create Solvetag model
 class SolveTag extends Model {}
 
+//generate Table for Solvetag model
 SolveTag.init(
   {
     id: {

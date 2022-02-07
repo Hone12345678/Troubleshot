@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../dist/output.css" rel="stylesheet">
+</head>
+
+
+
+<body class="bg-slate-800">
+
+  <!-- Header Section -->
+  <header
+    class="flex flex-wrap md:justify-between items-center text-center py-4 border-b-2 top-0 w-full border-zinc-500 min-h-full">
+    <div class="flex flex-wrap justify-left items-center xs:justify-center">
+      <img class="animate-pulse-slow pl-4" src="https://img.icons8.com/ios/50/fa314a/accuracy.png" />
+      <h1 class="text-slate-200 font-bold text-4xl pr-4 md:border-r-2 border-zinc-500">Troubleshot</h1>
+      <div class="flex md:justify-left xs:justify-center pt-1 pl-12 inline-block text-slate-400 text-3xl">
+        <div class="pr-12 xs:justify-center align-middle hover:text-slate-600">
+          <a href='/dashboard'>Dashboard</a>
+        </div>
+      {{#if loggedIn}}
+        <div class="pr-32 xs:justify-center align-middle hover:opacity-50">
+          <button id="addSolution"><img src="https://img.icons8.com/nolan/40/add.png" /></button>
+        </div>
+         {{else}}
+         <div class="pr-32 xs:justify-center align-middle hover:opacity-50">
+          <button id="login"><img src="https://img.icons8.com/nolan/40/add.png" /></button>
+        </div>
+       {{/if}}
+      </div>
+    </div>
+    {{#if loggedIn}}
+    <div class="flex justify-end pr-12 text-md space-x-2">
+      <button id="logout"
+        class="bg-slate-500 hover:bg-slate-400 text-slate-100 font-bold py-2 px-4 rounded shadow-xl inline-block leading-none">
+        Logout
+      </button>
+    </div>
+    {{else}}
+    <div class="flex justify-end pr-12 text-md space-x-2">
+      <button id="login"
+        class="bg-slate-500 hover:bg-slate-400 text-slate-100 font-bold py-2 px-4 rounded shadow-xl inline-block leading-none">
+        Login
+      </button>
+      <button id="signup"
+        class="bg-slate-500 hover:bg-slate-400 text-slate-100 font-bold py-2 px-4 rounded shadow-xl inline-block leading-none">
+        Signup
+      </button>
+    </div>
+ {{/if}}
+   {{!-- modals --}}
+    <div id="login-modal" class="modal" style="display:none;">
+      <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+        <form class="login-form" id="login-form">
+          <div>
+            <label for="email-login">email:</label>
+            <input type="text" id="email-login" />
+          </div>
+          <div>
+            <label for="password-login">password:</label>
+            <input type="password" id="password-login" />
+          </div>
+          <div>
+            <button id="modal-login-btn" type="submit">login</button>
+          </div>
+        </form>
+
+        <form class="signup-form">
+          <div>
+            <label for="username-signup">username:</label>
+            <input type="text" id="username-signup" />
+          </div>
+          <div>
+            <label for="email-signup">email:</label>
+            <input type="text" id="email-signup" />
+          </div>
+          <div>
+            <label for="password-signup">password:</label>
+            <input type="password" id="password-signup" />
+          </div>
+          <div>
+            <button id="modal-signup-btn" type="submit">signup</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <div id="addSolution-modal" class="modal" style="display:none;">
+      <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+        <form class="addSolution-form" id="addSolution-form">
+          <div>
+            <label for="category">What category does this fall under?</label>
+            <input type="text" id="category" />
+          </div>
+          <div>
+            <label for="name">What are you trying to solve?</label>
+            <input type="text" id="name" />
+          </div>
+          <div>
+            <label for="solution">What's the solution you found? </label>
+            <input type="text" id="solution" />
+          </div>
+          <div>
+            <label for="priority">What's the solution you found? </label>
+            <input type="text" id="priority" />
+          </div>
+           <label for="tag">What's the solution you found? </label>
+            <input type="text" id="tag" />
+          </div>
+          <div>
+            <button id="modal-addSolution-btn" type="submit">Create</button>
+          </div>
+        </form>
+
+  </header>
+
+  {{#if loggedIn}}
+
+  <!-- Page Navigation -->
+  <main class="lg:flex justify center min-h-screen relative">
+    {{{ body }}}
+    <script src="/javascript/logout.js"></script>
+      <script src="/javascript/addSolution.js"></script>
+  </main>
+  {{else}}
+  <script src="/javascript/login.js"></script>
+  {{/if}}
+  
+</body>
+
+</html>
