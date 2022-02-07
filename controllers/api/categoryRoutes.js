@@ -28,6 +28,9 @@ router.get("/:id", (req, res) => {
 
 //create a new category
 router.post("/", (req, res) => {
+  console.log(req.body)
+  console.log('---------hello--------');
+  console.log(req.session);
   Category.create(req.body, {
     category_name: req.body.category_name,
     user_id: req.body.user_id,

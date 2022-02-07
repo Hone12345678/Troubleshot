@@ -1,5 +1,3 @@
-const { NOEXPAND } = require("sequelize/dist/lib/table-hints");
-
 module.exports = {
   content: [
     "./src/**/*.{html,js}",
