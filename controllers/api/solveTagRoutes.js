@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const { Category, Solution, SolveTag, Tag, User } = require("../../models");
+const withAuth = require('../../utils/auth');
 
 //find all Solvetags
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   SolveTag.findAll()
     .then((dbSolveTagData) => res.json(dbSolveTagData))
     .catch((err) => {
@@ -12,7 +13,7 @@ router.get("/", (req, res) => {
 });
 
 //find solvetag by id
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
   SolveTag.findOne({
     where: {
       id: req.params.id,
@@ -26,7 +27,7 @@ router.get("/:id", (req, res) => {
 });
 
 //creates new solvetag
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   SolveTag.create(req.body, {
     solution_id: req.body.solution_id,
     tag_id: req.body.tag_id,
@@ -41,7 +42,7 @@ router.post("/", (req, res) => {
 });
 
 //edits existing solve tag by id
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth,(req, res) => {
   SolveTag.update(req.body, {
     where: {
       id: req.params.id,
@@ -57,7 +58,7 @@ router.put("/:id", (req, res) => {
 });
 
 //deletes existing solvetag by id
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   SolveTag.destroy({
     where: {
       id: req.params.id,

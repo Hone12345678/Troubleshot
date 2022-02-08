@@ -1,21 +1,25 @@
 const { Category, Solution } = require('../models');
-
+const withAuth = require('../utils/auth')
 const router = require('express').Router();
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   //perform multiple queries in one get request using async/await
   try {
     console.log(req.session)
     const categoryQuery = await Category.findAll({
+      where: {
+        user_id: req.session.user_id
+      },
       attributes: [
         'category_name', 'id'
-      ],
-      // where: {
-      //   user_id: req.session.user_id
-      // }
+      ]
     });
     const solutionQuery = await Solution.findAll({
+      // ***********once we can add solutions to new users we need to update the where statement*****
       //query for the top 3 results
+      // where: {
+      //   user_id: req.session.user_id
+      // },
       limit: 3,
       attributes: [
         'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
@@ -40,16 +44,23 @@ router.get('/', async (req, res) => {
 });
 
 //get route for highest-priority button
-router.get('/highest-priority', async (req, res) => {
+router.get('/highest-priority', withAuth, async (req, res) => {
   //perform multiple queries in one get request using async/await
   try {
     const categoryQuery = await Category.findAll({
+      where: {
+        user_id: req.session.user_id
+      },
       attributes: [
-        'category_name'
+        'category_name', 'id'
       ]
     });
     const solutionQuery = await Solution.findAll({
+      // ***********once we can add solutions to new users we need to update the where statement*****
       //query for the top 3 results
+       // where: {
+      //   user_id: req.session.user_id
+      // },
       limit: 3,
       attributes: [
         'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
@@ -78,22 +89,26 @@ router.get('/highest-priority', async (req, res) => {
 });
 
 //get route for highest-priority button
-router.get('/by-category/:catId', async (req, res) => {
+router.get('/by-category/:catId', withAuth, async (req, res) => {
   //perform multiple queries in one get request using async/await
   try {
     const categoryQuery = await Category.findAll({
+      where: {
+        id: req.params.catId
+      },
       attributes: [
         'category_name', 'id'
       ]
     });
     const solutionQuery = await Solution.findAll({
+      // ***********once we can add solutions to new users we need to update the where statement*****
       //query for the top 3 results
+      // where: {
+      //   category_id: req.params.catId
+      // },
       attributes: [
         'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
       ],
-      where: {
-        category_id: req.params.catId
-      }
     });
 
     //use .map() method on query arrays so that we only get values from table
@@ -113,5 +128,15 @@ router.get('/by-category/:catId', async (req, res) => {
     res.status(500).json(err);
   };
 });
+
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
+});
+
 
 module.exports = router;
