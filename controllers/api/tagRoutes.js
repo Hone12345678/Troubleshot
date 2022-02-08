@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const {Category, Solution, SolveTag, Tag, User} = require('../../models')
+const withAuth = require('../../utils/auth');
 
 //find all tags
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   Tag.findAll()
     .then((dbTagData) => res.json(dbTagData))
     .catch((err) => {
@@ -12,7 +13,7 @@ router.get("/", (req, res) => {
 });
 
 //find tag by id
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
   Tag.findOne({
     where: {
       id: req.params.id,
@@ -26,7 +27,7 @@ router.get("/:id", (req, res) => {
 });
 
 //create new tag
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Tag.create(req.body, {
     tag_name: req.body.tag_name
   })
@@ -40,7 +41,7 @@ router.post("/", (req, res) => {
 });
 
 //update existing tags
-router.put("/:id", (req, res) => {
+router.put("/:id", withAuth, (req, res) => {
   Tag.update(req.body, {
     where: {
       id: req.params.id,
@@ -55,7 +56,7 @@ router.put("/:id", (req, res) => {
 });
 
 //delete existing tag
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   Tag.destroy({
     where: {
       id: req.params.id,

@@ -1,4 +1,4 @@
-const modal = document.getElementById('login-modal');
+// const modal = document.getElementById('login-modal');
 
 async function loginFormHandler(event) {
   event.preventDefault();
@@ -17,7 +17,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.reload();
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
@@ -44,7 +44,7 @@ async function signupFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.reload();
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
@@ -52,8 +52,8 @@ async function signupFormHandler(event) {
 }
 
 
-document.querySelector('#modal-login-btn').addEventListener('click', loginFormHandler);
-document.querySelector('#modal-signup-btn').addEventListener('click', signupFormHandler);
+document.querySelector('#login-btn').addEventListener('click', loginFormHandler);
+document.querySelector('#signup-btn').addEventListener('click', signupFormHandler);
 
-document.querySelector('#login').addEventListener('click', () => {modal.style.display="block"})
-document.querySelector('#signup').addEventListener('click', () => {modal.style.display="block"})
+// document.querySelector('#login').addEventListener('click', () => {modal.style.display="block"})
+// document.querySelector('#signup').addEventListener('click', () => {modal.style.display="block"})

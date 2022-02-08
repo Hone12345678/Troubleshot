@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const {Category, Solution, SolveTag, Tag, User} = require('../../models')
+const withAuth = require('../../utils/auth');
 
 //find all solutions
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   Solution.findAll()
     .then((dbSolutionData) => res.json(dbSolutionData))
     .catch((err) => {
@@ -12,7 +13,7 @@ router.get("/", (req, res) => {
 });
 
 //find solution by id
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
   Solution.findOne({
     where: {
       id: req.params.id,
@@ -26,7 +27,7 @@ router.get("/:id", (req, res) => {
 });
 
 //create a new solution
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Solution.create(req.body, {
     name: req.body.name,
     solution: req.body.solution,
@@ -44,7 +45,7 @@ router.post("/", (req, res) => {
 });
 
 //edit an existing solution
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   Solution.update(req.body, {
     where: {
       id: req.params.id
@@ -59,7 +60,7 @@ router.put('/:id', (req, res) => {
 });
 
 //delete an exisitng solution
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   Solution.destroy({
     when: {
       id: req.params.id,

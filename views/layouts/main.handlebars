@@ -27,7 +27,7 @@
         </div>
          {{else}}
          <div class="pr-32 xs:justify-center align-middle hover:opacity-50">
-          <button id="login"><img src="https://img.icons8.com/nolan/40/add.png" /></button>
+          <a href="/login">Login</a>
         </div>
        {{/if}}
       </div>
@@ -39,51 +39,7 @@
         Logout
       </button>
     </div>
-    {{else}}
-    <div class="flex justify-end pr-12 text-md space-x-2">
-      <button id="signup"
-        class="bg-slate-500 hover:bg-slate-400 text-slate-100 font-bold py-2 px-4 rounded shadow-xl inline-block leading-none">
-        Login
-      </button>
-    </div>
- {{/if}}
-   {{!-- modals --}}
-    <div id="login-modal" class="modal" style="display:none">
-      <div class="relative top-20 mx-auto py-8 px-6 border w-96 shadow-lg rounded-lg bg-white text-emerald-400">
-        <form class="login-form" id="login-form">
-          <div>
-            <label for="email-login">Email: </label>
-            <input type="email" class="form-input text-pink mt-1 block rounded-md bg-slate-300 border-transparent focus:border-blue-600 focus:bg-white focus:ring-1" id="email-login" />
-          </div>
-          <div class="text-red-700">
-            <label class="text-orange-600" for="password-login">Password: </label>
-            <input type="password" id="password-login" />
-          </div>
-          <div>
-            <button id="modal-login-btn" type="submit" data-toggle="modal" data-dismiss="modal" class="justify-self-start mr-4 bg-red-500 rounded-lg px-1 text-sm m-w-xs shadow-xl text-white border-zinc-700">submit</button>
-          </div>
-        </form>
-
-        <form class="signup-form">
-          <div>
-            <label for="username-signup">Username: </label>
-            <input type="text" id="username-signup" />
-          </div>
-          <div>
-            <label for="email-signup">Email: </label>
-            <input type="text" id="email-signup" />
-          </div>
-          <div>
-            <label for="password-signup">Password: </label>
-            <input type="password" id="password-signup" />
-          </div>
-          <div>
-            <button id="modal-signup-btn" type="submit" data-toggle="modal" data-dismiss="modal" class="justify-self-start mr-4 bg-red-500 rounded-lg px-1 text-sm m-w-xs shadow-xl text-white border-zinc-700">create</button>
-          </div>
-        </form>
-      </div>
-    </div>
-    
+ {{/if}}    
     <div id="addCategory-modal" class="modal" style="display:none">
       <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
         <form class="addCategory-form" id="addCategory-form">
@@ -95,22 +51,19 @@
             <button id="modal-addCategory-btn" type="submit" data-toggle="modal" data-dismiss="modal">Create</button>
           </div>
         </form>
-
   </header>
 
-  {{#if loggedIn}}
 
   <!-- Page Navigation -->
   <main class="lg:flex justify center min-h-screen relative">
     {{{ body }}}
+  </main>
+  
+  {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     <script src="/javascript/addCategory.js"></script>
     <script src="/javascript/categoryBtns.js"></script>
-  </main>
-  {{else}}
-  <script src="/javascript/login.js"></script>
   {{/if}}
-  
 </body>
 
 </html>
