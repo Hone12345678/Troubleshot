@@ -1,22 +1,13 @@
 const router = require("express").Router();
 const { Category, Solution, SolveTag, Tag, User } = require("../../models");
+const withAuth = require('../../utils/auth');
 
 
 // find all categories
-router.get("/", (req, res) => {
-  Category.findAll()
-    .then((dbCategoryData) => res.json(dbCategoryData))
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-//find categories by id specific to the user
-router.get("/:id", (req, res) => {
-  Category.findOne({
+router.get("/", withAuth, (req, res) => {
+  Category.findAll({
     where: {
-      id: req.params.id,
+      user_id: req.session.user_id
     }
   })
     .then((dbCategoryData) => res.json(dbCategoryData))
@@ -27,21 +18,21 @@ router.get("/:id", (req, res) => {
 });
 
 //find categories by id specific to the user
-// router.get("/", (req, res) => {
-//   Category.findAll({
-//     where: {
-//       user_id: req.session.user_id,
-//     }
-//   })
-//     .then((dbCategoryData) => res.json(dbCategoryData))
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
+router.get("/:id", withAuth, (req, res) => {
+  Category.findOne({
+    where: {
+      id: req.session.user_id,
+    }
+  })
+    .then((dbCategoryData) => res.json(dbCategoryData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 //create a new category
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   console.log('---------hello--------');
   req.body.user_id = req.session.user_id;
   Category.create(req.body, {
@@ -58,7 +49,7 @@ router.post("/", (req, res) => {
 });
 
 //update an existing category
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   Category.update(req.body, {
     where: {
       id: req.params.id
@@ -73,7 +64,7 @@ router.put('/:id', (req, res) => {
 });
 
 //delete an existing category
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   Category.destroy({
     where: {
       id: req.params.id,
