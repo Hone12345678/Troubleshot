@@ -9,44 +9,44 @@
 <body class="bg-slate-800">
 
   <!-- Header Section -->
-  <header class="flex flex-wrap md:justify-between items-center text-center py-4 border-b-2 top-0 w-full border-zinc-500 min-h-full">
+  <header class="abolute justify-center items-center flex flex-wrap md:justify-between items-center text-center py-4 border-b-2 top-0 w-full border-zinc-500 min-h-full">
     <div class="flex flex-wrap justify-left items-center xs:justify-center">
       <img class="animate-pulse-slow pl-4" src="https://img.icons8.com/ios/50/fa314a/accuracy.png"/>
       <h1 class="text-slate-200 font-bold text-4xl pr-4 md:border-r-2 border-zinc-500">Troubleshot</h1>
     
-      <div class="flex md:justify-left xs:justify-center pt-1 pl-12 inline-block text-slate-400 text-3xl">
+      <div class=" place-content-center flex md:justify-left xs:justify-center pt-1 pl-12 inline-block text-slate-400 text-3xl">
         <div class="pr-12 xs:justify-center align-middle hover:text-slate-600">
           <a href='/dashboard'>Dashboard</a>
         </div>
-        <div class="pr-32 xs:justify-center align-middle hover:opacity-50">
+        <div class="m-28 pr-32 xs:justify-center align-middle hover:opacity-50">
           <a href='/create'><img src="https://img.icons8.com/nolan/40/add.png"/></a>
         </div>
       </div>
     </div>
 
         <div class="flex justify-end pr-12 text-md space-x-2">
-            <button id="login" class="bg-slate-500 hover:bg-slate-400 text-slate-100 font-bold py-2 px-4 rounded shadow-xl inline-block leading-none">
+            <button id="login" class=" fixed top-0 left-0 right-0 bg-slate-500 hover:bg-slate-400 text-slate-100 font-bold py-2 px-4 rounded shadow-xl inline-block leading-none">
               Login
             </button>
-            <button id="signup" class="bg-slate-500 hover:bg-slate-400 text-slate-100 font-bold py-2 px-4 rounded shadow-xl inline-block leading-none">
+            <button id="signup" class="inset-1 bg-slate-500 hover:bg-slate-400 text-slate-100 font-bold py-2 px-4 rounded shadow-xl inline-block leading-none">
               Signup
             </button>
         </div>
   </header>
 
   <!-- Page Navigation -->
-  <main class="lg:flex justify center min-h-screen relative">
-    <div class="flex flex-wrap flex-col relative text-center pt-10 py-3 px-6 text-slate-100 border-zinc-500 lg:border-r-2 md:w-1/6">
+  <main class=" hidden lg:flex justify center min-h-screen relative top-400 left-400 right-400">
+    <div class="inset-400px flex flex-wrap flex-col relative text-center pt-10 py-3 px-6 text-slate-100 border-zinc-500 lg:border-r-2 md:w-1/6">
     <nav class="col-span-3">
-      <div class="relative mx-auto text-gray-600 m-w-s pb-8">
-        <input class="border-2 border-gray-300 bg-white h-8 rounded-lg text-sm focus:outline-none"
+      <div class="m-28 relative mx-auto text-gray-600 m-w-s pb-8">
+        <input class="z-50 border-2 border-gray-300 bg-white h-8 rounded-lg text-sm focus:outline-none"
           type="search" name="search" placeholder="Search">
           <button type="submit" class="justify-self-start mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500">
             submit
           </button>
       </div>
       <ul class="pb-8 justify-between">
-        <button id="Javascript" class="bg-slate-500 hover:bg-slate-400 text-slate-100 py-2 mb-2 xs:w-45 text-center rounded shadow-xl">
+        <button id="Javascript" class="hidden overflow bg-slate-500 hover:bg-slate-400 text-slate-100 py-2 mb-2 xs:w-45 text-center rounded shadow-xl">
           Javascript
         </button>
         <button id="Tailwind" class="bg-slate-500 hover:bg-slate-400 text-slate-100 py-2 mb-2 xs:w-45 text-center rounded shadow-xl ">
