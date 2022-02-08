@@ -93,9 +93,9 @@ router.get('/by-category/:catId', withAuth, async (req, res) => {
   //perform multiple queries in one get request using async/await
   try {
     const categoryQuery = await Category.findAll({
-      where: {
-        id: req.params.catId
-      },
+      // where: {
+      //   id: req.params.catId
+      // },
       attributes: [
         'category_name', 'id'
       ]
@@ -103,9 +103,9 @@ router.get('/by-category/:catId', withAuth, async (req, res) => {
     const solutionQuery = await Solution.findAll({
       // ***********once we can add solutions to new users we need to update the where statement*****
       //query for the top 3 results
-      // where: {
-      //   category_id: req.params.catId
-      // },
+      where: {
+        category_id: req.params.catId
+      },
       attributes: [
         'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
       ],
@@ -136,6 +136,27 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+
+router.get('/create-solution', async (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
+    return;
+  }
+  const categoryQuery = await Category.findAll({
+    where: {
+      user_id: req.session.user_id
+    },
+    attributes: [
+      'category_name', 'id'
+    ]
+  })
+  const categories = categoryQuery.map(array => array.get({ plain: true }));
+  res.render('addSolution', {
+    categories,
+    loggedIn: req.session.loggedIn
+  })
 });
 
 
