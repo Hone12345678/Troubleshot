@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../dist/output.css" rel="stylesheet">
+  {{!--
+  <link href="../dist/output.css" rel="stylesheet"> --}}
+  <link href="/dist/output.css" rel="stylesheet">
 </head>
 
 
@@ -22,15 +24,15 @@
           {{!-- <a href='/dashboard'>Dashboard</a> --}}
           <a href="/create-solution">Create a Solution</a>
         </div>
-      {{#if loggedIn}}
+        {{#if loggedIn}}
         <div class="pr-32 xs:justify-center align-middle hover:opacity-50">
-          <button id="addCategory"><img src="https://img.icons8.com/nolan/40/add.png" /></button>
+          <button id="addCategory modal"><img src="https://img.icons8.com/nolan/40/add.png" data-toggle="modal" data-dismiss="modal"/></button>
         </div>
-         {{else}}
-         <div class="pr-32 xs:justify-center align-middle hover:opacity-50">
+        {{else}}
+        <div class="pr-32 xs:justify-center align-middle hover:opacity-50">
           <a href="/login">Login</a>
         </div>
-       {{/if}}
+        {{/if}}
       </div>
     </div>
     {{#if loggedIn}}
@@ -40,30 +42,29 @@
         Logout
       </button>
     </div>
- {{/if}}    
-    <div id="addCategory-modal" class="modal" style="display:none">
-      <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
-        <form class="addCategory-form" id="addCategory-form">
-          <div>
-            <label for="category">What would you like your category to be called?</label>
-            <input type="text" id="category" />
-          </div>
-          <div>
-            <button id="modal-addCategory-btn" type="submit" data-toggle="modal" data-dismiss="modal">Create</button>
-          </div>
-        </form>
-      </div>
-    </div>
+    {{/if}}
 
-
-
-  </header>
+</header>
 
   <!-- Page Navigation -->
   <main class="lg:flex justify center min-h-screen relative">
+    {{!-- <div id="addCategory-modal" class="modal" style="display:none"> --}}
+      <div id="addCategory-modal" class="modal hidden fixed inset-1 m-28 z-50">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md">
+          <form class="addCategory-form bg-slate-500 border-white rounded shadow-xl " id="addCategory-form">
+            <div>
+              <label for="category">What would you like your category to be called?</label>
+              <input type="text" id="category" />
+            </div>
+            <div>
+              <button id="modal-addCategory-btn" class="justify-self-start mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded" type="submit" data-toggle="modal" data-dismiss="modal">Create</button>
+            </div>
+          </form>
+        </div>
+      </div>
     {{{ body }}}
   </main>
-  
+
   {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     <script src="/javascript/addCategory.js"></script>
