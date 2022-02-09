@@ -5,18 +5,16 @@ async function createSolutionHandler(event) {
   const solution = document.querySelector('#solution').value.trim();
   const priority = document.querySelector('#priority').value.trim();
   const category_id = document.querySelector('#category_id').value.trim();
+  const user_id = document.querySelector('#categoryBtnNav button').getAttribute('data-')
   
-  console.log(this.session);
-  console.log('------testing--------');
-
-const response = await fetch(`/api/categories`, {
+const response = await fetch(`/api/solutions`, {
     method: 'POST',
     body: JSON.stringify({ 
       name: name,
       solution: solution,
       priority: priority,
       category_id: category_id,
-      user_id: 4
+      user_id: user_id
     }),
     headers: {
       'Content-Type': 'application/json'
@@ -25,12 +23,10 @@ const response = await fetch(`/api/categories`, {
   );
 
   if (response.ok) {
-    document.location.reload();
+    document.location.replace('/');
   } else {
     alert(response.statusText);
   }
 }
 
-// document.querySelector('#modal-addSolution-btn').addEventListener('click', createSolutionHandler);
-
-// document.querySelector('#createSolution').addEventListener('click', createSolutionHandler)
+document.querySelector('#modal-addSolution-btn').addEventListener('click', createSolutionHandler);

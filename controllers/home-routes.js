@@ -150,10 +150,11 @@ router.get('/create-solution', async (req, res) => {
       user_id: req.session.user_id
     },
     attributes: [
-      'category_name', 'id'
+      'category_name', 'id', 'user_id'
     ]
   })
   const categories = categoryQuery.map(array => array.get({ plain: true }));
+  console.log(categories)
   res.render('addSolution', {
     categories,
     loggedIn: req.session.loggedIn
