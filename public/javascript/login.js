@@ -19,6 +19,7 @@ async function loginFormHandler(event) {
       setTimeout(()=> {
         window.location.href = '/'
       }, 100)
+
     })
     .catch(err => {
       alert(err.message)
@@ -48,6 +49,7 @@ async function signupFormHandler(event) {
       setTimeout(()=> {
         window.location.href = '/'
       }, 100)
+
     })
     .catch(err => {
       alert(err.message)
