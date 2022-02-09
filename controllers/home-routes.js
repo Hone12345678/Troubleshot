@@ -93,9 +93,10 @@ router.get('/by-category/:catId', withAuth, async (req, res) => {
   //perform multiple queries in one get request using async/await
   try {
     const categoryQuery = await Category.findAll({
-      // where: {
-      //   id: req.params.catId
-      // },
+      where: {
+        user_id: req.session.user_id,
+        // id: req.params.catId
+      },
       attributes: [
         'category_name', 'id'
       ]
