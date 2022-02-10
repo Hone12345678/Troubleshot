@@ -17,25 +17,38 @@
     </ul>
   </nav>
 </div>
-<div>
+<div class="shadow-inner rounded bg-slate-700 border border-slate-500">
 <form class="addSolution-form">
-  <label for="name">What would you like your Solution title to be?</label>
+  <div>
+  <label class="text-center pr-24 text-zinc-300 text-2xl" for="name">What would you like your Solution title to be?</label>
   <input type="text" id="name" />
+  </div>
   
-  <label for="solution">What is the solution?</label>
-  <input type="text" id="solution" />
+  <div>
+  <label class="text-center pr-24 text-zinc-300 text-2xl" for="solution">What is the solution?</label>
+  <textarea id="solution" name="solution" form="addSolution-form" rows="15" cols="102"></textarea>
+  </div>
   
-  <label for="priority">What how important is this (1 - 5, low - high)?</label>
-  <input type="text" id="priority" />
+  <div>
+  <label class="text-center pr-24 text-zinc-300 text-2xl" for="priority">What how important is this (1 - 5, low - high)?</label>
+  <select type="text" id="priority">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  </div>
   
-  <label for="category_id">What category would you like this stored under?</label>
+  <div>
+  <label class="text-center pr-24 text-zinc-300 text-2xl" for="category_id">What category would you like this stored under?</label>
   <select name="category_id" id="category_id">
     {{> dropdown-category categories }}
-    
   </select>
-
+  </div>
+    
   <div>
-    <button id="modal-addSolution-btn" type="submit" data-toggle="modal" data-dismiss="modal">Create Solution</button>
+    <button class="justify-self-end mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded" id="modal-addSolution-btn" type="submit">Create Solution</button>
   </div>
 
 </form>
