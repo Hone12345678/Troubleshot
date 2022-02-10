@@ -40,6 +40,13 @@ Solution.init(
         }
     },
 
+    page_views: {
+      type:DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 1,
+    },
+    
+
     category_id: {
         type: DataTypes.INTEGER,
         references: {
