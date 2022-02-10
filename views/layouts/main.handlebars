@@ -47,17 +47,17 @@
 </header>
 
   <!-- Page Navigation -->
-  <main class="lg:flex justify center min-h-screen relative">
+  <main class="lg:flex justify center min-h-screen relative space-y-4  ">
     {{!-- <div id="addCategory-modal" class="modal" style="display:none"> --}}
-      <div id="addCategory-modal" class="modal hidden fixed inset-1 m-28 z-50">
-        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md">
-          <form class="addCategory-form bg-slate-500 border-white rounded shadow-xl " id="addCategory-form">
+      <div id="addCategory-modal" class="modal hidden fixed p-8  backdrop-blur-md bg-white/30 inset-1 m-28 z-50">
+        <div class="relative mx-auto border w-96 shadow-lg rounded-md border-slate-500">
+          <form class=" relative addCategory-form p-8 bg-slate-800 border-2 border-slate-500 shadow-xl rounded-md " id="addCategory-form">
             <div>
-              <label for="category">What would you like your category to be called?</label>
-              <input type="text" id="category" />
+              <label class="space-y-4 text-slate-400 text-xl " for="category">What would you like your category to be called?</label>
+              <input class="class=space-y-4" type="text" id="category" />
             </div>
             <div>
-              <button id="modal-addCategory-btn" class="justify-self-start mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded" type="submit" data-toggle="modal" data-dismiss="modal">Create</button>
+              <button id="modal-addCategory-btn" class="justify-self-center mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded transition ease-in-out delay-150 mr-4 bg-red-500 text-sm m-w-xs text-white border-zinc-500 rounded hover:-translate-y-1 hover:scale-110 hover:mr-4 bg-red-500 text-sm m-w-xs text-white border-zinc-500 rounded duration-300" type="submit" data-toggle="modal" data-dismiss="modal">Create</button>
             </div>
           </form>
         </div>
