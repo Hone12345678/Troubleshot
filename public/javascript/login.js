@@ -19,6 +19,7 @@ async function loginFormHandler(event) {
       setTimeout(()=> {
         window.location.href = '/'
       }, 100)
+
     })
     .catch(err => {
       alert(err.message)
@@ -31,8 +32,6 @@ async function signupFormHandler(event) {
   const username = document.querySelector('#username-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
-
-  console.log(username, email, password);
 
   if (username && email && password) {
     fetch('/api/users/', {
@@ -48,6 +47,7 @@ async function signupFormHandler(event) {
       setTimeout(()=> {
         window.location.href = '/'
       }, 100)
+
     })
     .catch(err => {
       alert(err.message)
