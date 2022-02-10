@@ -6,8 +6,6 @@ async function createCategoryHandler(event) {
 
   const category = document.querySelector('#category').value.trim();
 
-  console.log('------testing--------');
-
 const response = await fetch(`/api/categories`, {
     method: 'POST',
     body: JSON.stringify({ 
