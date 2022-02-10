@@ -5,7 +5,6 @@ const router = require('express').Router();
 router.get('/', withAuth, async (req, res) => {
   //perform multiple queries in one get request using async/await
   try {
-    console.log(req.session)
     const categoryQuery = await Category.findAll({
       where: {
         user_id: req.session.user_id
@@ -74,7 +73,6 @@ router.get('/highest-priority', withAuth, async (req, res) => {
     const categories = categoryQuery.map(array => array.get({ plain: true }));
     const sol = solutionQuery.map(array => array.get({ plain: true }));
 
-    console.log(sol);
     //send the new arrays to the homepage to be displayed on the home page
     res.render('homepage', {
       categories,
@@ -115,8 +113,6 @@ router.get('/by-category/:catId', withAuth, async (req, res) => {
     //use .map() method on query arrays so that we only get values from table
     const categories = categoryQuery.map(array => array.get({ plain: true }));
     const sol = solutionQuery.map(array => array.get({ plain: true }));
-
-    console.log(sol);
     //send the new arrays to the homepage to be displayed on the home page
     res.render('homepage', {
       categories,
@@ -154,7 +150,6 @@ router.get('/create-solution', async (req, res) => {
     ]
   })
   const categories = categoryQuery.map(array => array.get({ plain: true }));
-  console.log(categories)
   res.render('addSolution', {
     categories,
     loggedIn: req.session.loggedIn

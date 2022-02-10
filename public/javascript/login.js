@@ -33,8 +33,6 @@ async function signupFormHandler(event) {
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
-  console.log(username, email, password);
-
   if (username && email && password) {
     fetch('/api/users/', {
       method: 'post', 
