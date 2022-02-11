@@ -20,21 +20,7 @@
 
 <!-- Content Section -->
 <div class="flex flex-shrink justify-center">
-  <div class="lg:pt-20 text-center align-middle text-xl">
-    <div class="pb-8 px-6 text-center">
-      <button id="highestPriority"
-        class="bg-red-600 hover:bg-red-800 text-slate-100 font-bold py-2 px-4 pb-5 mb-2 w-48 rounded shadow-xl inline-block leading-none">
-        Highest Priority
-      </button>
-      <button id="mostRecentPosts"
-        class="bg-blue-600 hover:bg-blue-800 text-slate-100 font-bold py-2 px-4 pb-5 mb-2 w-48 rounded shadow-xl inline-block leading-none">
-        Recent Posts
-      </button>
-      <button id="mostViewed"
-        class="bg-indigo-500 hover:bg-indigo-700 text-slate-100 font-bold py-2 px-4 pb-5 mb-2 w-48 rounded shadow-xl inline-block leading-none">
-        Most Viewed
-      </button>
-    </div>
+  <div class="text-center align-middle text-xl">
     {{!-- loop through the solutions array --}}
     <div class="space-y-6 px-6">
       {{> solution-content sol}}
@@ -42,4 +28,4 @@
   </div>
 </div>
 
-<script src="/javascript/homepage.js"></script>
+{{!-- <script src="/javascript/homepage.js"></script> --}}
