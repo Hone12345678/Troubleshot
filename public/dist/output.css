@@ -732,6 +732,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .bg-white\/30 {
   background-color: rgb(255 255 255 / 0.3);
 }
@@ -739,6 +740,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-8 {
   padding: 2rem;
 =======
+=======
+>>>>>>> bf5420847db81f3b9bbb21555fbaee74ba397f1c
 .bg-slate-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
@@ -746,7 +749,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-5 {
   padding: 1.25rem;
+<<<<<<< HEAD
 >>>>>>> 7d694b9893fdca41832a99562e6a97efe12b973a
+=======
+
+>>>>>>> bf5420847db81f3b9bbb21555fbaee74ba397f1c
 }
 
 .py-4 {
@@ -917,6 +924,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bf5420847db81f3b9bbb21555fbaee74ba397f1c
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
@@ -964,6 +974,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+<<<<<<< HEAD
 =======
 .shadow-inner {
   --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
@@ -972,6 +983,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 >>>>>>> 7d694b9893fdca41832a99562e6a97efe12b973a
+=======
+>>>>>>> bf5420847db81f3b9bbb21555fbaee74ba397f1c
 .hover\:bg-slate-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(148 163 184 / var(--tw-bg-opacity));
