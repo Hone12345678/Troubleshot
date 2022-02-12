@@ -333,6 +333,7 @@ router.get('/by-solution/:id', withAuth, async (req, res) => {
     //use .map() method on query arrays so that we only get values from table
     const categories = categoryQuery.map(array => array.get({ plain: true }));
     const sol = solutionQuery.map(array => array.get({ plain: true }));
+    console.log(sol);
     // send the new arrays to the homepage to be displayed on the home page
     res.render('solution', {
       categories,

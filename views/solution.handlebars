@@ -23,16 +23,12 @@
 <div class="flex flex-shrink justify-center">
   <div class="text-center align-middle text-xl">
     {{!-- loop through the solutions array --}}
-    <div id="solutionCont" class="w 2/3 space-y-6 px-6 truncate ...">
-      {{> solution-content sol}}
+    <div id="solutionCont" class="w-2/3 space-y-6 px-6">
+      {{> oneSolution sol}}
     </div>
   </div>
 </div>
 
-<button id='edit-btn' type="submit"
-  class="justify-self-start mr-4 bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded">
-  Edit
-</button>
 
 <script src="/javascript/editSolution.js"></script>
 <script src="/javascript/displaySolution.js"></script>
