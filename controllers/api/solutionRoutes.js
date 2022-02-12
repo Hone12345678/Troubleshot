@@ -62,7 +62,7 @@ router.put('/:id', withAuth, (req, res) => {
 //delete an exisitng solution
 router.delete("/:id", withAuth, (req, res) => {
   Solution.destroy({
-    when: {
+    where: {
       id: req.params.id,
     },
   })
