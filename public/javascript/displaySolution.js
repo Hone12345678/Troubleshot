@@ -7,9 +7,14 @@ async function selectSolutionHandler(event) {
   let toNumber = pageViews++
   let newView = toNumber+1
 
+<<<<<<< HEAD
 if (solutionId === 'deleteBtn'){
 return
 } 
+=======
+  // await console.log(newView);
+  // await console.log(solutionId, categoryId);
+>>>>>>> ad48b1187fe369ea1b9875e83557dc256a0b988e
 
   const response = await fetch(`/api/solutions/${solutionId}`, {
     method: 'PUT',

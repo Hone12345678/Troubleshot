@@ -51,6 +51,9 @@ router.put('/:id', withAuth, (req, res) => {
       id: req.params.id
     },
     name: req.body.name,
+    solution: req.body.solution,
+    priority: req.body.priority,
+    category_id: req.body.category_id
   })
     .then(dbSolutionData => res.json(dbSolutionData))
     .catch(err => {
@@ -74,6 +77,62 @@ router.delete("/:id", withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
+
+//get route for highest-priority button
+router.get('/edit/:id', withAuth, async (req, res) => {
+  //perform multiple queries in one get request using async/await
+  try {
+    const categoryQuery = await Category.findAll({
+      where: {
+        user_id: req.session.user_id,
+        // id: req.params.catId
+      },
+      attributes: [
+        'category_name', 'id'
+      ]
+    });
+    const solutionQuery = await Solution.findAll({
+      where: {
+        id: req.params.id
+      },
+      attributes: [
+        'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
+      ],
+      include: [
+        {
+          model: Category,
+          attributes:['id', 'category_name']
+      }
+    ]
+    });
+
+    //use .map() method on query arrays so that we only get values from table
+    const categories = categoryQuery.map(array => array.get({ plain: true }));
+    const solutions = solutionQuery.map(array => array.get({ plain: true }));
+    const sol = solutions[0];
+    //send the new arrays to the homepage to be displayed on the home page
+    console.log("solution",sol);
+    res.render('editSolution', {
+      categories,
+      sol, 
+      loggedIn: req.session.loggedIn
+    })
+  }
+  catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  };
+});
+
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('login');
+});
+
 
 
 module.exports = router;

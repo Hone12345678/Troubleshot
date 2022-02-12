@@ -1,7 +1,7 @@
 <div class="flex flex-wrap flex-col relative text-center pt-10 py-3 px-6 text-slate-100 border-zinc-500 lg:border-r-2 md:w-1/6">
   <nav class="col-span-3">
     <form class="relative mx-auto text-gray-600 m-w-s pb-8">
-      <input id="search" class="border-2 border-gray-300 bg-white h-8 rounded-lg text-sm focus:outline-none" type="search"
+      <input class="border-2 border-gray-300 bg-white h-8 rounded-lg text-sm focus:outline-none" type="search"
         name="search" placeholder="Search" />
       <button type="submit" id="submitBtn"
         class="justify-self-start mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded">
@@ -17,21 +17,23 @@
     </ul>
   </nav>
 </div>
+{{#with sol}}
 <div class="shadow-inner rounded bg-slate-700 border border-slate-500">
 <form class="addSolution-form">
   <div>
   <label class="text-center pr-24 text-zinc-300 text-2xl" for="name">What would you like your Solution title to be?</label>
-  <input type="text" id="name" maxlength="30" size="30"/>
+  <input type="text" id="name" maxlength="30" size="30" value="{{this.name}}">
   </div>
   
   <div>
   <label class="text-center pr-24 text-zinc-300 text-2xl" for="solution">What is the solution?</label>
-  <textarea id="solution" name="solution" form="addSolution-form" rows="15" cols="102"></textarea>
+  <textarea id="solution" name="solution" form="addSolution-form" rows="15" cols="102">{{this.solution}}</textarea>
   </div>
   
   <div>
   <label class="text-center pr-24 text-zinc-300 text-2xl" for="priority">What how important is this (1 - 5, low - high)?</label>
   <select type="text" id="priority">
+    <option value="{{this.priority}}">{{this.priority}}</option>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -43,15 +45,16 @@
   <div>
   <label class="text-center pr-24 text-zinc-300 text-2xl" for="category_id">What category would you like this stored under?</label>
   <select name="category_id" id="category_id">
+    <option value="{{this.category.id}}">{{this.category.category_name}}</option>
+    {{/with}}
     {{> dropdown-category categories }}
   </select>
   </div>
-    
   <div>
-    <button class="justify-self-end mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded" id="modal-addSolution-btn" type="submit">Create Solution</button>
+    <button class="justify-self-end mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded" id="save-btn" type="submit">Save Changes</button>
   </div>
 
 </form>
 </div>
 
-<script src="/javascript/addSolution.js"></script>
+<script src="/javascript/saveSolution.js"></script>
