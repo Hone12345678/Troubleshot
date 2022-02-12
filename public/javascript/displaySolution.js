@@ -6,7 +6,7 @@ async function selectSolutionHandler(event) {
 
 
   console.log(solutionId, categoryId); 
-  document.location.replace(`/by-solution/${categoryId}-${solutionId}`)
+  document.location.replace(`/solutions/${categoryId}-${solutionId}`)
 
 }
 

@@ -18,7 +18,7 @@ const response = await fetch(`/api/categories`, {
   );
 
   if (response.ok) {
-    document.location.reload();
+    document.location.reload("/");
   } else {
     alert(response.statusText);
   }
