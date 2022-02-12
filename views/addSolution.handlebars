@@ -1,10 +1,12 @@
 <div class="flex flex-wrap flex-col relative text-center pt-10 py-3 px-6 text-slate-100 border-zinc-500 lg:border-r-2 md:w-1/6">
   <nav class="col-span-3">
     <form class="relative mx-auto text-gray-600 m-w-s pb-8">
-      <input class="border-2 border-gray-300 bg-white h-8 rounded-lg text-sm focus:outline-none" type="search"
+      <input id="search" class="border-2 border-gray-300 bg-white h-8 rounded-lg text-sm focus:outline-none" type="search"
         name="search" placeholder="Search" />
+
       <button type="submit"
-        class="justify-self-start mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded">
+        id="submitBtn" class="justify-self-start mr-4 bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white rounded border-2 border-stone-900">
+
         submit
       </button>
     </form>
@@ -17,21 +19,26 @@
     </ul>
   </nav>
 </div>
-<div class="shadow-inner rounded bg-slate-700 border border-slate-500">
-<form class="addSolution-form">
-  <div>
-  <label class="text-center pr-24 text-zinc-300 text-2xl" for="name">What would you like your Solution title to be?</label>
-  <input type="text" id="name" maxlength="30" size="30"/>
+
+{{!-- Create Solution Section --}}
+<div class="items-center justify-center">
+<form class="addSolution-form pl-36 pt-8">
+  {{!-- Title area --}}
+  <div class="pb-3">
+  <label class="text-center pr-5 text-zinc-300 text-2xl" for="name">Solution Title: </label>
+  <input type="text" id="name" maxlength="30" size="30" class="bg-gray-200" placeholder="  Please enter a title"/>
   </div>
   
-  <div>
-  <label class="text-center pr-24 text-zinc-300 text-2xl" for="solution">What is the solution?</label>
-  <textarea id="solution" name="solution" form="addSolution-form" rows="15" cols="102"></textarea>
+  {{!-- Solution text area --}}
+  <div class="pb-3">
+  <label class="text-center pr-5 text-zinc-300 text-2xl" for="solution">Solution: </label>
+  <textarea id="solution" name="solution" form="addSolution-form" rows="15" cols="102" class="bg-gray-200" placeholder="  Your solution goes here"></textarea>
   </div>
   
-  <div>
-  <label class="text-center pr-24 text-zinc-300 text-2xl" for="priority">What how important is this (1 - 5, low - high)?</label>
-  <select type="text" id="priority">
+  {{!-- Priority selection --}}
+  <div class="pb-3">
+  <label class="text-center pr-5 text-zinc-300 text-2xl" for="priority">Priority (low-high): </label>
+  <select type="text" id="priority" class="bg-gray-200 w-24 text-center">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -40,15 +47,16 @@
   </select>
   </div>
   
-  <div>
-  <label class="text-center pr-24 text-zinc-300 text-2xl" for="category_id">What category would you like this stored under?</label>
-  <select name="category_id" id="category_id">
+  {{!-- Category selection --}}
+  <div class="pb-3">
+  <label class="text-center pr-5 text-zinc-300 text-2xl" for="category_id">Category: </label>
+  <select name="category_id" id="category_id" class="bg-gray-200 text-center" placeholder="Solution Category">
     {{> dropdown-category categories }}
   </select>
   </div>
     
-  <div>
-    <button class="justify-self-end mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded" id="modal-addSolution-btn" type="submit">Create Solution</button>
+  <div class="flex justify-center h-10 align-center">
+    <button class="mr-4 font-bold bg-sky-600 hover:bg-sky-800 px-2 text-lg m-w-xs text-zinc-300 rounded-xl border-2 border-stone-900" id="modal-addSolution-btn" type="submit">Create Solution</button>
   </div>
 
 </form>
