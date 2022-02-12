@@ -26,7 +26,7 @@ Solution.init(
     },
 
     solution: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false,
     },
 
@@ -39,7 +39,7 @@ Solution.init(
             min: 1,
         }
     },
-
+    
     category_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -47,17 +47,23 @@ Solution.init(
           key: "id",
         },
       },
-
-    user_id: {
+      
+      user_id: {
         type: DataTypes.INTEGER,
         references: {
           model: "user",
           key: "id",
         },
       },
-  },
-
-  {
+      
+      page_views: {
+        type:DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 1,
+      }
+    },
+    
+      {
     sequelize,
     timestamps: true,
     freezeTableName: true,

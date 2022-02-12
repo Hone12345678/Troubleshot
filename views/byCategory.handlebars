@@ -3,7 +3,7 @@
     <form class="relative mx-auto text-gray-600 m-w-s pb-8">
       <input id='search' class="border-2 border-gray-300 bg-white h-8 rounded-lg text-sm focus:outline-none" type="search"
         name="search" placeholder="Search">
-      <button id='submitBtn'type="submit"
+      <button id='submitBtn' type="submit"
         class="justify-self-start mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded">
         submit
       </button>
@@ -20,26 +20,10 @@
 
 <!-- Content Section -->
 <div class="flex flex-shrink justify-center">
-  <div class="lg:pt-20 text-center align-middle text-xl">
-    <div class="pb-8 px-6 text-center">
-      <button id="highestPriority"
-        class="bg-red-600 hover:bg-red-800 text-slate-100 font-bold py-2 px-4 pb-5 mb-2 w-48 rounded shadow-xl inline-block leading-none">
-        Highest Priority
-      </button>
-      <button id="recentPost"
-        class="bg-blue-600 hover:bg-blue-800 text-slate-100 font-bold py-2 px-4 pb-5 mb-2 w-48 rounded shadow-xl inline-block leading-none">
-        Recent Posts
-      </button>
-      <button id="mostViewed"
-        class="bg-indigo-500 hover:bg-indigo-700 text-slate-100 font-bold py-2 px-4 pb-5 mb-2 w-48 rounded shadow-xl inline-block leading-none">
-        Most Viewed
-      </button>
-    </div>
+  <div class="text-center align-middle text-xl">
     {{!-- loop through the solutions array --}}
     <div id="solutionCont" class="space-y-6 px-6">
       {{> solution-content sol}}
     </div>
   </div>
 </div>
-
-<script src="/javascript/homepage.js"></script>

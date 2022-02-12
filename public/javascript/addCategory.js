@@ -28,3 +28,9 @@ document.querySelector('#modal-addCategory-btn').addEventListener('click', creat
 
 // document.querySelector('#addCategory').addEventListener('click', () => {modal.style.display="block"})
 addCat.addEventListener('click', () => {modal.classList.toggle('hidden')});
+
+window.onclick = function(event) {
+  if (event.target === modal) {
+    modal.classList.add('hidden')
+  }
+}

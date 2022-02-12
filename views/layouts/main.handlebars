@@ -16,7 +16,7 @@
     class="flex flex-wrap md:justify-between items-center text-center py-4 border-b-2 top-0 w-full border-zinc-500 min-h-full">
     <div class="flex flex-wrap justify-left items-center xs:justify-center">
       <img class="animate-pulse-slow pl-4" src="https://img.icons8.com/ios/50/fa314a/accuracy.png" />
-      <h1 class="text-slate-200 font-bold text-4xl pr-4 md:border-r-2 border-zinc-500">Troubleshot</h1>
+      <h1 class="text-slate-200 font-bold text-4xl pr-4 md:border-r-2 border-zinc-500"><a href="/">Troubleshot</a></h1>
       <div class="flex md:justify-left xs:justify-center pt-1 pl-12 inline-block text-slate-400 text-3xl">
         <div class="pr-12 xs:justify-center align-middle hover:text-slate-600">
           {{!-- <a href='/dashboard'>Dashboard</a> --}}
@@ -52,7 +52,7 @@
           <form class=" relative addCategory-form p-8 bg-slate-800 border-2 border-slate-500 shadow-xl rounded-md " id="addCategory-form">
             <div>
               <label class="space-y-4 text-slate-400 text-xl" for="category">What would you like your category to be called?</label>
-              <input class="class=space-y-4" type="text" id="category" />
+              <input class="class=space-y-4" type="text" id="category" maxlength="20"/>
             </div>
             <div>
               <button id="modal-addCategory-btn" class="justify-self-center mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded transition ease-in-out delay-150 mr-4 bg-red-500 text-sm m-w-xs text-white border-zinc-500 rounded hover:-translate-y-1 hover:scale-110 hover:mr-4 bg-red-500 text-sm m-w-xs text-white border-zinc-500 rounded duration-300" type="submit" data-toggle="modal" data-dismiss="modal">Create</button>
@@ -68,6 +68,7 @@
     <script src="/javascript/addCategory.js"></script>
     <script src="/javascript/categoryBtns.js"></script>
     <script src="/javascript/quickSearch.js"></script>
+    <script src="/javascript/displaySolution.js"></script>
   {{/if}}
 </body>
 
