@@ -5,7 +5,7 @@
       <input id='search' class="border-2 border-gray-300 bg-white h-8 rounded-lg text-sm focus:outline-none"
         type="search" name="search" placeholder="Search">
       <button id='submitBtn' type="submit"
-        class="justify-self-start mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded">
+        class="justify-self-start mr-4 bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded">
         submit
       </button>
     </form>
@@ -23,14 +23,14 @@
 <div class="flex flex-shrink justify-center">
   <div class="text-center align-middle text-xl">
     {{!-- loop through the solutions array --}}
-    <div id="solutionCont" class="space-y-6 px-6">
+    <div id="solutionCont" class="w 2/3 space-y-6 px-6 truncate ...">
       {{> solution-content sol}}
     </div>
   </div>
 </div>
 
 <button id='edit-btn' type="submit"
-  class="justify-self-start mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded">
+  class="justify-self-start mr-4 bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded">
   Edit
 </button>
 

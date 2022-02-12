@@ -4,11 +4,11 @@
       <input id='search' class="border-2 border-gray-300 bg-white h-8 rounded-lg text-sm focus:outline-none" type="search"
         name="search" placeholder="Search">
       <button id='submitBtn' type="submit"
-        class="justify-self-start mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded">
+        class="justify-self-start mr-4 bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white rounded border-2 border-stone-900">
         submit
       </button>
          <button id='clearBtn'type="submit" value="back"
-        class="justify-self-start mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded">
+        class="justify-self-start mr-4 bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white rounded border-2 border-stone-900">
         clear
       </button>
     </form>
@@ -16,7 +16,7 @@
     <div id="categoryBtnNav">
     {{> category-buttons categories}}
     </div>
-    <ul class="pb-8 justify-between">
+    <ul class="pb-8 justify-between truncate ...">
 
     </ul>
   </nav>
