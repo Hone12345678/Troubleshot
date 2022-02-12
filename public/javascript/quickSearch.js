@@ -1,3 +1,5 @@
+
+//generalsearch
 async function searchButtonHandler(event) {
     event.preventDefault();
 
@@ -7,3 +9,4 @@ async function searchButtonHandler(event) {
     }
   
   document.querySelector('#submitBtn').addEventListener('click', searchButtonHandler);
+
