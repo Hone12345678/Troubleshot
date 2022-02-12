@@ -1,12 +1,12 @@
 {{#each this}}
 <div>
-<button id="{{id}}" data-catId="{{category_id}}" data-views="{{page_views}}" class="shadow-inner rounded bg-slate-700 border border-slate-500">
-  <h2 class="text-center pr-24 underline text-zinc-300 text-2xl">{{capitalize_first name}}</h2>
-  <pre class="xs:pl-36 flex-wrap text-left w-3/4 text-slate-200 text-base">{{solution}}</pre>
+<button id="{{id}}" data-catId="{{category_id}}" data-views="{{page_views}}" class="w-1/2 shadow-inner rounded bg-slate-700 border border-slate-500">
+  <h2 class="text-center underline text-zinc-300 text-2xl">{{capitalize_first name}}</h2>
+  <pre class="flex-wrap text-left w-3/4 text-slate-200 truncate ...">{{solution}}</pre>
 </button>
 <button
  id='deleteBtn'type="submit" data-delId="{{id}}"
-        class="justify-self-start mr-4 bg-red-500 px-1 text-sm m-w-xs text-white border-zinc-500 rounded">
+        class="justify-self-start mr-4 bg-red-500 px-1 text-sm text-white border-zinc-500 rounded">
         delete
 </button>
 </div>

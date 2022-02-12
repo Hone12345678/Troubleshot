@@ -8,6 +8,7 @@ async function selectSolutionHandler(event) {
   let newView = toNumber+1
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 if (solutionId === 'deleteBtn'){
 return
 } 
@@ -15,6 +16,11 @@ return
   // await console.log(newView);
   // await console.log(solutionId, categoryId);
 >>>>>>> ad48b1187fe369ea1b9875e83557dc256a0b988e
+=======
+if (solutionId === 'deleteBtn' || solutionId === 'edit-btn'){
+return
+} 
+>>>>>>> 9fdb59212d7806a294b0347bbd77858c21dfe07c
 
   const response = await fetch(`/api/solutions/${solutionId}`, {
     method: 'PUT',
