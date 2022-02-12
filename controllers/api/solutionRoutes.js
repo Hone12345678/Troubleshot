@@ -97,13 +97,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
       },
       attributes: [
         'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
-      ],
-      include: [
-        {
-          model: Category,
-          attributes:['id', 'category_name']
-      }
-    ]
+      ]
     });
 
     //use .map() method on query arrays so that we only get values from table
