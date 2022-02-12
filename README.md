@@ -7,19 +7,21 @@
 
 - Why we built this - after spending hours looking up issues and troubleshooting every week we realized it's hard to keep all of the information readily availiby and easy to access. With Troubleshot we wanted to create something that make a clean and simple way to store information that we all commonly need to refer to. Some information may be simple peices of boiler plate code while others may be wildly niche and specific issues we may never need again but never want to spen hours having to google ever again.
 
-- What problem does it solve - The tedious mind numbing slog that is trying to track down an issue that you have solved in the past. It can be wildly frustrating to spen hours re-doing something that you know there's a solution for you just cant quite remember what to do or how you resolved it last time.
-troubleshot also solves the issue of organizing and mainting notes.
+- What problem does it solve - The tedious mind numbing slog that is trying to track down an issue that you have solved in the past. It can be wildly frustrating to spend hours re-doing something that you know there's a solution for you just cant quite remember what to do or how you resolved it last time.
+troubleshot also solves the issue of organizing and maintaining notes.
 
 - What we learned - Ironicly enough we learned a great deal about troubleshooting issues specific to our backend development. As a team we learned the ins and outs of structuring a complex backend from the ground up. It's challenging enough to built a backend with a layout of what the inteded end product will be, it's much more complex when building a backend while trying to define a concrete end product. With the nebulous nature of the this project we realized just how imprtant it is to concretely communicate ideas and draft how the end product will look and function before attempting to build anything.
 
 
 ## Table of Contents
 
-- [Description](#description)
-- [Built With](#built-with)
-- [Credits](#credits)
-- [Features](#features)
-- [Image of Website](#image-of-website)
+- [Troubleshot](#troubleshot)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Built With](#built-with)
+  - [Credits](#credits)
+  - [Features](#features)
+  - [Image of Website](#image-of-website)
 
 
 ## Built With
