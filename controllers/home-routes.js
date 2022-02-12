@@ -19,9 +19,9 @@ router.get('/', withAuth, async (req, res) => {
     const solutionQuery = await Solution.findAll({
       // ***********once we can add solutions to new users we need to update the where statement*****
       //query for the top 3 results
-      // where: {
-      //   user_id: req.session.user_id
-      // },
+      where: {
+        user_id: req.session.user_id
+      },
       limit: 3,
       attributes: [
         'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
@@ -60,9 +60,9 @@ router.get('/recent-post', withAuth, async (req, res) => {
     const solutionQuery = await Solution.findAll({
       // ***********once we can add count by clicks we need to update the where statement and findAll to findOne*****
       //query for the top 3 results
-       // where: {
-      //   user_id: req.session.user_id
-      // },
+       where: {
+        user_id: req.session.user_id
+      },
       limit: 5,
       attributes: [
         'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
@@ -104,9 +104,9 @@ router.get('/most-viewed', withAuth, async (req, res) => {
     const solutionQuery = await Solution.findAll({
       // ***********once we can add count by view we need to update the where statement and findAll to findOne*****
       //query for the top 3 results
-       // where: {
-      //   user_id: req.session.user_id
-      // },
+       where: {
+        user_id: req.session.user_id
+      },
       limit: 5,
       attributes: [
         'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
@@ -148,9 +148,9 @@ router.get('/highest-priority', withAuth, async (req, res) => {
     const solutionQuery = await Solution.findAll({
       // ***********once we can add solutions to new users we need to update the where statement*****
       //query for the top 3 results
-       // where: {
-      //   user_id: req.session.user_id
-      // },
+       where: {
+        user_id: req.session.user_id
+      },
       limit: 3,
       attributes: [
         'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
@@ -294,7 +294,7 @@ router.get('/search-category/:search', withAuth, async (req, res) => {
   };
 });
 
-router.get('/solutions/:id', withAuth, async (req, res) => {
+router.get('/by-solution/:id', withAuth, async (req, res) => {
   //perform multiple queries in one get request using async/await
   let solArr = req.params.id.split('-')
   try {
