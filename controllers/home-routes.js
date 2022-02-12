@@ -1,7 +1,7 @@
 const { Category, Solution } = require('../models');
 const withAuth = require('../utils/auth')
 const router = require('express').Router();
-
+const sequelize = require('../config/connection')
 
 
 
@@ -112,7 +112,7 @@ router.get('/most-viewed', withAuth, async (req, res) => {
         'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
       ],
       order: [
-        ['priority', 'DESC']
+        ['page_views', 'DESC']
       ]
     });
 
@@ -297,7 +297,6 @@ router.get('/search-category/:search', withAuth, async (req, res) => {
 router.get('/solutions/:id', withAuth, async (req, res) => {
   //perform multiple queries in one get request using async/await
   let solArr = req.params.id.split('-')
-  console.log(solArr)
   try {
     const categoryQuery = await Category.findAll({
       where: {
@@ -316,9 +315,20 @@ router.get('/solutions/:id', withAuth, async (req, res) => {
         id: solArr[1],
       },
       attributes: [
-        'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
+        'id', 'name', 'solution', 'priority', 'category_id', 'user_id', 'page_views'
       ]
     });
+    let viewCount = solutionQuery[0].dataValues.page_views + 1
+    await console.log(viewCount)
+    await Solution.update(req.body, {
+      where: {
+        user_id: req.session.user_id,
+        id: solArr[1]
+      },
+      body: {
+        page_views: viewCount
+      }
+    })
 
     //use .map() method on query arrays so that we only get values from table
     const categories = categoryQuery.map(array => array.get({ plain: true }));
