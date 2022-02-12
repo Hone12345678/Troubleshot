@@ -7,8 +7,8 @@ async function selectSolutionHandler(event) {
   let toNumber = pageViews++
   let newView = toNumber+1
 
-  await console.log(newView);
-  await console.log(solutionId, categoryId);
+  // await console.log(newView);
+  // await console.log(solutionId, categoryId);
 
   const response = await fetch(`/api/solutions/${solutionId}`, {
     method: 'PUT',
