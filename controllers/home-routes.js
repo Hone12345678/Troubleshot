@@ -294,7 +294,7 @@ router.get('/search-category/:search', withAuth, async (req, res) => {
   };
 });
 
-router.get('/by-solution/:id', withAuth, async (req, res) => {
+router.get('/solutions/:id', withAuth, async (req, res) => {
   //perform multiple queries in one get request using async/await
   let solArr = req.params.id.split('-')
   try {
@@ -334,7 +334,7 @@ router.get('/by-solution/:id', withAuth, async (req, res) => {
     const categories = categoryQuery.map(array => array.get({ plain: true }));
     const sol = solutionQuery.map(array => array.get({ plain: true }));
     // send the new arrays to the homepage to be displayed on the home page
-    res.render('byCategory', {
+    res.render('solution', {
       categories,
       sol, 
       loggedIn: req.session.loggedIn
