@@ -1,10 +1,11 @@
+//allows user to create new categories 
 const modal = document.getElementById('addCategory-modal');
 const addCat = document.querySelector('#addCategory')
 
 async function createCategoryHandler(event) {
   event.preventDefault();
 
-  const category = document.querySelector('#category').value.trim();
+const category = document.querySelector('#category').value.trim();
 
 const response = await fetch(`/api/categories`, {
     method: 'POST',
@@ -26,7 +27,6 @@ const response = await fetch(`/api/categories`, {
 
 document.querySelector('#modal-addCategory-btn').addEventListener('click', createCategoryHandler);
 
-// document.querySelector('#addCategory').addEventListener('click', () => {modal.style.display="block"})
 addCat.addEventListener('click', () => {modal.classList.toggle('hidden')});
 
 window.onclick = function(event) {

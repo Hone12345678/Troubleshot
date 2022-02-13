@@ -1,15 +1,11 @@
+// allows user to target a specific solution to delete
 async function deleteButtonHandler(event) {
     event.preventDefault();
 
-    
-        const id = event.target.getAttribute('data-delId');
-        
-    await console.log(id)
-
+    const id = event.target.getAttribute('data-delId');   
     const response = await fetch(`/api/solutions/${id}`, {
         method: 'DELETE'
     });
-    console.log(response)
     
       if (response.ok) {
         document.location.replace('/');
@@ -18,5 +14,4 @@ async function deleteButtonHandler(event) {
       }
     }
    
-
 document.querySelector('#deleteBtn').addEventListener('click', deleteButtonHandler);
