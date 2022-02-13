@@ -1,6 +1,5 @@
 const router = require('express').Router();
-const {Category, Solution, SolveTag, Tag, User} = require('../../models')
-const withAuth = require('../../utils/auth');
+const {User} = require('../../models')
 
 //find all users
 router.get("/", (req, res) => {
@@ -131,6 +130,5 @@ router.delete("/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 module.exports = router;

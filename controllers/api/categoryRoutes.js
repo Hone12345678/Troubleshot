@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Category, Solution, SolveTag, Tag, User } = require("../../models");
+const {Category} = require("../../models");
 const withAuth = require('../../utils/auth');
 
 

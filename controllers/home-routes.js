@@ -1,7 +1,7 @@
 const { Category, Solution } = require('../models');
 const withAuth = require('../utils/auth')
 const router = require('express').Router();
-const sequelize = require('../config/connection')
+
 
 
 

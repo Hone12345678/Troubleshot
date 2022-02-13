@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Category, Solution, SolveTag, Tag, User} = require('../../models')
+const {Category, Solution} = require('../../models')
 const withAuth = require('../../utils/auth');
 
 //find all solutions
