@@ -9,6 +9,8 @@ async function selectSolutionHandler(event) {
   let toNumber = pageViews++
   let newView = toNumber+1
 
+  console.log(solutionId, categoryId)
+
 if (solutionId === 'deleteBtn' || solutionId === 'edit-btn'){
 return
 } 
