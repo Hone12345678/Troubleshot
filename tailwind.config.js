@@ -12,6 +12,9 @@ module.exports = {
       },
       width: {
         '45': '45%',
+        '50rem': '50rem',
+        '32rem': '32rem',
+        '72rem': '72rem',
       },
       screens: {
         'xs': '325px',

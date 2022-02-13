@@ -1,18 +1,23 @@
+{{!-- Single Solution Page --}}
 {{#each this}}
-<div class="shadow-inner rounded bg-slate-700 border border-slate-500">
-<div id="{{id}}" data-catId="{{category_id}}" data-views="{{page_views}}">
-  <h2 class="text-center underline text-zinc-300 text-2xl">{{capitalize_first name}}</h2>
-  <pre class="text-slate-200">{{solution}}</pre>
-</div>
-<button
- id='deleteBtn'type="submit" data-delId="{{id}}"
-        class="justify-self-start mr-4 bg-red-500 px-1 text-sm text-white border-zinc-500 rounded">
-        delete
-</button>
-<button id='edit-btn' type="submit"
-  class="justify-self-start mr-4 bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded">
-  Edit
-</button>
+{{!-- Content Area --}}
+<div class="flex justify-self-center pl-10 lg:pl-48 lg:pt-12">
+  <div id="{{id}}" data-catId="{{category_id}}" data-views="{{page_views}}" class="shadow-inner rounded bg-slate-700 border border-slate-500 lg:w-72rem md:w-32rem">
+    <h2 class="text-center underline text-zinc-300 text-2xl">{{capitalize_first name}}</h2>
+    <pre style="white-space:pre-wrap" class="text-slate-200">{{solution}}</pre>
+  </div>
+
+  {{!-- Delete Button --}}
+  <button id='deleteBtn'type="submit" data-delId="{{id}}"
+    class="justify-self-start w-20 bg-red-500 hover:bg-red-700 px-1 text-sm font-bold text-white border border-slate-500 rounded">
+    Delete
+  </button>
+
+  {{!-- Edit Button --}}
+  <button id='edit-btn' type="submit"
+    class="justify-self-start w-20 bg-sky-600 hover:bg-sky-800 px-1 text-sm font-bold text-white border border-slate-500 rounded">
+    Edit
+  </button>
 </div>
 {{/each}} 
 

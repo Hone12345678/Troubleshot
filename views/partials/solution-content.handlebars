@@ -1,13 +1,20 @@
+{{!-- Display All Solutions Page --}}
 {{#each this}}
-<div>
-<button id="{{id}}" data-catId="{{category_id}}" data-views="{{page_views}}" class="w-1/2 shadow-inner rounded bg-slate-700 border border-slate-500">
+{{!-- Content Area --}}
+<div class="flex justify-center pl-10 lg:pl-48">
+
+  {{!-- Solution Preview, click to drill down to specific solution --}}
+<button id="{{id}}" data-catId="{{category_id}}" data-views="{{page_views}}" class="lg:w-50rem md:w-32rem shadow-inner rounded bg-slate-700 border border-slate-500">
   <h2 class="text-center underline text-zinc-300 text-2xl">{{capitalize_first name}}</h2>
-  <pre class="flex-wrap text-left w-3/4 text-slate-200 truncate ...">{{solution}}</pre>
+  <pre style="white-space:pre-wrap" class="flex-wrap text-left pl-8 w-3/4 text-slate-200 truncate ...">{{solution}}</pre>
+
 </button>
+
+{{!-- Delete Button --}}
 <button
  id='deleteBtn'type="submit" data-delId="{{id}}"
-        class="justify-self-start mr-4 bg-red-500 px-1 text-sm text-white border-zinc-500 rounded">
-        delete
+        class="justify-self-start w-20 bg-red-500 hover:bg-red-700 px-1 text-sm font-bold text-white border border-slate-500 rounded">
+        Delete
 </button>
 </div>
 {{/each}} 
