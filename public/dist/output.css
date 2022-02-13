@@ -576,20 +576,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 6rem;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
+.w-1\/2 {
+  width: 50%;
 }
 
 .w-96 {
   width: 24rem;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
 .flex-shrink {
   flex-shrink: 1;
+}
+
+.grow {
+  flex-grow: 1;
 }
 
 @-webkit-keyframes pulse {
