@@ -35,7 +35,8 @@
   {{!-- Solution text area --}}
   <div class="pb-3">
   <label class="text-center pr-5 text-zinc-300 text-2xl" for="solution">Solution: </label>
-  <textarea id="solution" name="solution" form="addSolution-form" class="bg-gray-200" placeholder="  Your solution goes here" rows="15" cols="102">{{this.solution}}</textarea>
+  <textarea id="solution" name="solution" form="addSolution-form" class="bg-gray-200" wrap="hard" placeholder="  Your solution goes here" rows="15" cols="102">{{this.solution}}</textarea>
+
   </div>
   
   {{!-- Priority selection --}}
@@ -56,16 +57,16 @@
   <label class="text-center pr-5 text-zinc-300 text-2xl" for="category_id">Category: </label>
   <select name="category_id" id="category_id" class="bg-gray-200 text-center" placeholder="Solution Category">
     <option value="{{this.category.id}}">{{this.category.category_name}}</option>
-    {{/with}}
     {{> dropdown-category categories }}
   </select>
   </div>
- 
+
   {{!-- Create Solution Button --}}
   <div class="flex justify-center h-10 align-center">
-    <button class="mr-4 font-bold bg-sky-600 hover:bg-sky-800 px-2 text-lg m-w-xs text-zinc-300 rounded-xl border-2 border-stone-900" id="save-btn" type="submit">Save Changes</button>
+    <button class="mr-4 font-bold bg-sky-600 hover:bg-sky-800 px-2 text-lg m-w-xs text-zinc-300 rounded-xl border-2 border-stone-90" id="save-btn" type="submit">Save Changes</button>
+    <button data-catSol="{{this.category_id}}-{{this.id}}" class="justify-self-end mr-4 bg-gray-300 hover:bg-gret px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded" id="cancel-btn" type="submit">Cancel Changes</button>
   </div>
-
+{{/with}}
 </form>
 </div>
 

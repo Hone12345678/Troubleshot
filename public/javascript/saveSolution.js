@@ -32,5 +32,13 @@ const response = await fetch(`/api/solutions/${id}`, {
   }
 }
 
+async function cancelButton(event) {
+  event.preventDefault();
+
+  const byCat = event.target.closest('button').getAttribute('data-catSol');
+  console.log(byCat);
+  document.location.replace(`/by-solution/${byCat}`)
+}
 
 document.querySelector('#save-btn').addEventListener('click', saveSolutionHandler);
+document.querySelector('#cancel-btn').addEventListener('click', cancelButton);
