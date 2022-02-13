@@ -1,8 +1,6 @@
 //import models
 const Category = require('./Category');
 const Solution = require('./Solution');
-const SolveTag = require('./SolveTag');
-const Tag = require('./Tag');
 const User = require('./User');
 
 
@@ -30,15 +28,15 @@ User.hasMany(Solution,{
     foreignKey: 'user_id'
 })
 
-// solution has many tags
-Solution.belongsToMany(Tag,{
-    through: SolveTag
-})
+// // solution has many tags
+// Solution.belongsToMany(Tag,{
+//     through: SolveTag
+// })
 
-// tag belongs to many solutions
-Tag.belongsToMany(Solution,{
-    through: SolveTag
-})
+// // tag belongs to many solutions
+// Tag.belongsToMany(Solution,{
+//     through: SolveTag
+// })
 
 
 
@@ -46,7 +44,5 @@ Tag.belongsToMany(Solution,{
 module.exports = {
     Category,
     Solution,
-    SolveTag,
-    Tag,
     User,
   };
