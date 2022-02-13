@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 
+
 //create Solvetag model
 class SolveTag extends Model {}
 
