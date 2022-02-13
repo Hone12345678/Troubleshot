@@ -572,10 +572,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 6rem;
 }
 
-.w-1\/2 {
-  width: 50%;
-}
-
 .w-96 {
   width: 24rem;
 }
@@ -766,11 +762,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-indigo-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(99 102 241 / var(--tw-bg-opacity));
-}
-
-.bg-emerald-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(4 120 87 / var(--tw-bg-opacity));
 }
 
 .bg-gray-200 {
@@ -1083,11 +1074,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:bg-indigo-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(67 56 202 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-emerald-900:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(6 78 59 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-sky-800:hover {
