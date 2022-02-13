@@ -46,14 +46,14 @@
   <label class="text-center pr-24 text-zinc-300 text-2xl" for="category_id">What category would you like this stored under?</label>
   <select name="category_id" id="category_id">
     <option value="{{this.category.id}}">{{this.category.category_name}}</option>
-    {{/with}}
     {{> dropdown-category categories }}
   </select>
   </div>
-  <div>
+  <div class="mt-6">
     <button class="justify-self-end mr-4 bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded" id="save-btn" type="submit">Save Changes</button>
+    <button data-catSol="{{this.category_id}}-{{this.id}}" class="justify-self-end mr-4 bg-gray-300 hover:bg-gret px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded" id="cancel-btn" type="submit">Cancel Changes</button>
   </div>
-
+{{/with}}
 </form>
 </div>
 
