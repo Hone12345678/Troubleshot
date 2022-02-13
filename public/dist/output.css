@@ -520,10 +520,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 0.5rem;
 }
 
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
 .inline-block {
   display: inline-block;
 }
@@ -580,10 +576,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 50%;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
-}
-
 .w-96 {
   width: 24rem;
 }
@@ -592,16 +584,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 5rem;
 }
 
-.w-96 {
-  width: 24rem;
-}
-
 .flex-shrink {
   flex-shrink: 1;
-}
-
-.grow {
-  flex-grow: 1;
 }
 
 @-webkit-keyframes pulse {
@@ -673,6 +657,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-self-start {
   justify-self: start;
+}
+
+.justify-self-end {
+  justify-self: end;
 }
 
 .justify-self-center {
@@ -809,14 +797,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 255 255 / 0.3);
 }
 
-
 .bg-slate-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
-
-.bg-green-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
 
 .p-8 {
@@ -1110,11 +1093,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:bg-sky-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(7 89 133 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-green-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(21 128 61 / var(--tw-bg-opacity));
 }
 
 .hover\:text-slate-600:hover {
