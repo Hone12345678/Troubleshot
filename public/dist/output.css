@@ -507,6 +507,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 7rem;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -653,10 +657,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-self-start {
   justify-self: start;
-}
-
-.justify-self-end {
-  justify-self: end;
 }
 
 .justify-self-center {
@@ -979,6 +979,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-zinc-300 {
   --tw-text-opacity: 1;
   color: rgb(212 212 216 / var(--tw-text-opacity));
+}
+
+.text-slate-700 {
+  --tw-text-opacity: 1;
+  color: rgb(51 65 85 / var(--tw-text-opacity));
 }
 
 .underline {
