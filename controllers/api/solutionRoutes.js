@@ -97,6 +97,12 @@ router.get('/edit/:id', withAuth, async (req, res) => {
       },
       attributes: [
         'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
+      ],
+      include: [
+        {
+          model: Category,
+          attributes: ['id', 'category_name']
+        }
       ]
     });
 
