@@ -1,13 +1,17 @@
+{{!-- Search bar on left side of navbar --}}
 <div class="flex flex-wrap flex-col relative text-center pt-10 py-3 px-6 text-slate-100 border-zinc-500 lg:border-r-2 md:w-1/6">
   <nav class="col-span-3">
     <form class="relative mx-auto text-gray-600 m-w-s pb-8">
       <input class="border-2 border-gray-300 bg-white h-8 rounded-lg text-sm focus:outline-none" type="search"
-        name="search" placeholder="Search" />
+        name="search" placeholder="  Search" />
+
+{{!-- Submit Search Result Button --}}
       <button type="submit"
-        id="submitBtn" class="justify-self-start mr-4 bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white rounded border-2 border-stone-900">
-        submit
+        id="submitBtn" class="justify-self-start mr-4 bg-emerald-700 hover:bg-emerald-900 px-1 text-sm m-w-xs text-white rounded border-2 border-stone-900">
+        Submit
       </button>
     </form>
+
     {{!-- dynamically generate category buttons --}}
     <div id="categoryBtnNav">
     {{> category-buttons categories}}
@@ -17,22 +21,28 @@
     </ul>
   </nav>
 </div>
+
+{{!-- Edit Solution Section --}}
 {{#with sol}}
-<div class="shadow-inner rounded bg-slate-700 border border-slate-500">
-<form class="addSolution-form">
-  <div>
-  <label class="text-center pr-24 text-zinc-300 text-2xl" for="name">What would you like your Solution title to be?</label>
-  <input type="text" id="name" maxlength="30" size="30" value="{{this.name}}">
+<div class="items-center justify-center pl-10 lg:pl-48">
+<form class="addSolution-form pt-8">
+  {{!-- Title area --}}
+  <div class="pb-3">
+  <label class="text-center pr-5 text-zinc-300 text-2xl" for="name">Solution Title: </label>
+  <input type="text" id="name" maxlength="30" size="30" value="{{this.name}}" class="bg-gray-200" placeholder="  Please enter a title">
   </div>
   
-  <div>
-  <label class="text-center pr-24 text-zinc-300 text-2xl" for="solution">What is the solution?</label>
-  <textarea id="solution" name="solution" form="addSolution-form" wrap="hard" rows="15" cols="102">{{this.solution}}</textarea>
+  {{!-- Solution text area --}}
+  <div class="pb-3">
+  <label class="text-center pr-5 text-zinc-300 text-2xl" for="solution">Solution: </label>
+  <textarea id="solution" name="solution" form="addSolution-form" class="bg-gray-200" wrap="hard" placeholder="  Your solution goes here" rows="15" cols="102">{{this.solution}}</textarea>
+
   </div>
   
-  <div>
-  <label class="text-center pr-24 text-zinc-300 text-2xl" for="priority">What how important is this (1 - 5, low - high)?</label>
-  <select type="text" id="priority">
+  {{!-- Priority selection --}}
+  <div class="pb-3">
+  <label class="text-center pr-5 text-zinc-300 text-2xl" for="priority">Priority (low-high): </label>
+  <select type="text" id="priority" class="bg-gray-200 w-24 text-center">
     <option value="{{this.priority}}">{{this.priority}}</option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -42,15 +52,18 @@
   </select>
   </div>
   
-  <div>
-  <label class="text-center pr-24 text-zinc-300 text-2xl" for="category_id">What category would you like this stored under?</label>
-  <select name="category_id" id="category_id">
+  {{!-- Category selection --}}
+  <div class="pb-3">
+  <label class="text-center pr-5 text-zinc-300 text-2xl" for="category_id">Category: </label>
+  <select name="category_id" id="category_id" class="bg-gray-200 text-center" placeholder="Solution Category">
     <option value="{{this.category.id}}">{{this.category.category_name}}</option>
     {{> dropdown-category categories }}
   </select>
   </div>
-  <div class="mt-6">
-    <button class="justify-self-end mr-4 bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded" id="save-btn" type="submit">Save Changes</button>
+
+  {{!-- Create Solution Button --}}
+  <div class="flex justify-center h-10 align-center">
+    <button class="mr-4 font-bold bg-sky-600 hover:bg-sky-800 px-2 text-lg m-w-xs text-zinc-300 rounded-xl border-2 border-stone-90" id="save-btn" type="submit">Save Changes</button>
     <button data-catSol="{{this.category_id}}-{{this.id}}" class="justify-self-end mr-4 bg-gray-300 hover:bg-gret px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded" id="cancel-btn" type="submit">Cancel Changes</button>
   </div>
 {{/with}}
