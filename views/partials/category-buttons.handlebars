@@ -1,9 +1,28 @@
-{{!-- Links category buttons --}}
-{{#each this}}
-
-{{!-- Category button on left side navbar --}}
-<button id="{{id}}" data-="{{user_id}}"
-  class="bg-slate-500 hover:bg-slate-400 text-slate-100 py-2 mb-2 xs:w-45 text-center rounded shadow-2xl text-clip overflow-hidden ...">
-  {{capitalize_first category_name}}
-</button>
-{{/each}}
+<div
+  class="flex flex-wrap flex-col relative text-center pt-10 py-3 px-6 text-slate-100 border-zinc-500 lg:border-r-2 md:w-1/6">
+  <nav class="col-span-3">
+    <form class="relative mx-auto text-gray-600 m-w-s pb-8">
+      <input id='search' class="border-2 border-gray-300 bg-white h-8 rounded-lg text-sm focus:outline-none"
+        type="search" name="search" placeholder="Search">
+      <button id='submitBtn' type="submit"
+        class="justify-self-start mr-4 bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white rounded border-2 border-stone-900">
+        submit
+      </button>
+         <button id='clearBtn'type="submit"
+        class="justify-self-start mr-4 bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white rounded border-2 border-stone-900">
+        clear
+      </button>
+    </form>
+    {{!-- dynamically generate category buttons --}}
+    <div id="categoryBtnNav">
+      {{#each this}}
+      <button id="{{id}}" data-="{{user_id}}"
+        class="bg-slate-500 hover:bg-slate-400 text-slate-100 py-2 mb-2 xs:w-45 text-center rounded shadow-2xl text-clip overflow-hidden ...">
+        {{capitalize_first category_name}}
+      </button>
+      {{/each}}
+    </div>
+    <ul class="pb-8 justify-between truncate ...">
+    </ul>
+  </nav>
+</div>

@@ -1,25 +1,4 @@
-{{!-- Search bar on left side of navbar --}}
-<div class="flex flex-wrap flex-col relative text-center pt-10 py-3 px-6 text-slate-100 border-zinc-500 lg:border-r-2 md:w-1/6">
-  <nav class="col-span-3">
-    <form class="relative mx-auto text-gray-600 m-w-s pb-8">
-      <input id='search' class="border-2 border-gray-300 bg-white h-8 rounded-lg text-sm focus:outline-none" type="search"
-        name="search" placeholder="  Search">
-
-      {{!-- Submit Search Result Button --}}
-      <button id='submitBtn'type="submit"
-        class="justify-self-start mr-4 bg-emerald-700 hover:bg-emerald-900 px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded  ">
-        Submit
-      </button>
-    </form>
-    {{!-- dynamically generate category buttons --}}
-    <div id="categoryBtnNav">
-    {{> category-buttons categories}}
-    </div>
-    <ul class="pb-8 justify-between">
-
-    </ul>
-  </nav>
-</div>
+{{> category-buttons categories}}
 
 <!-- Content Section -->
 <div class="flex flex-shrink justify-center overflow-x-hidden">

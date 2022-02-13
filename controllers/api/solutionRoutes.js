@@ -62,7 +62,7 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
-//delete an exisitng solution
+//delete an existing solution
 router.delete("/:id", withAuth, (req, res) => {
   Solution.destroy({
     where: {
