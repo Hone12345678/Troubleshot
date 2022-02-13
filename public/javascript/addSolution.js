@@ -1,3 +1,6 @@
+// allows user to add a new solution
+//solution is associated with a user and a specific category
+//user can specify a name, add text for the solution, and specify a priority level
 async function createSolutionHandler(event) {
   event.preventDefault();
 
