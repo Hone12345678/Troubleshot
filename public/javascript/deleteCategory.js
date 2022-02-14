@@ -4,7 +4,8 @@ const confirmDtlBtn = document.querySelector('#confirmCat-delete')
 let catId = '';
 
 // allows user to target a specific solution to delete
-async function deleteButtonHandler(event) {
+async function deleteCatButtonHandler() {
+  console.log('delete', catId);
   const response = await fetch(`/api/categories/${catId}`, {
     method: 'DELETE'
   });
@@ -22,7 +23,7 @@ function toggleModal() {
 }
 
 // confirm-delete
-confirmDtlBtn.addEventListener('click', deleteButtonHandler);
+confirmDtlBtn.addEventListener('click', deleteCatButtonHandler);
 
 // cancel-delete
 document.querySelector('#cancelCat-delete').addEventListener('click', toggleModal);
