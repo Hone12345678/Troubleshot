@@ -3,6 +3,11 @@
 <!-- Content Section -->
 <div class="flex flex-shrink justify-center">
   <div class="text-center align-middle text-xl">
+    </button>
+         <button id='deleteCatBtn'type="submit" data-delId="{{catId}}"
+        class="justify-self-start mr-4 bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white rounded border-2 border-stone-900">
+        delete
+      </button>
     {{!-- loop through the solutions array --}}
     <div id="solutionCont" class="space-y-6 px-6 lg:pt-12">
       {{> solution-content sol}}
@@ -12,4 +17,5 @@
 
 <script src="/javascript/clearSearch.js"></script>
 <script src="/javascript/displaySolution.js"></script>
+<script src="/javascript/deleteCategory.js"></script>
 
