@@ -1,5 +1,5 @@
 const deleteModal = document.getElementById('deleteConfirm');
-const delBtn = document.querySelector('#deleteBtn');
+const delBtn = document.querySelector('#solutionCont');
 let id = '';
 
 // allows user to target a specific solution to delete
@@ -29,10 +29,13 @@ document.querySelector('#cancel-delete').addEventListener('click', toggleModal);
 //toggle modal on clicking delete button
 delBtn.addEventListener('click', (event)=> {
   event.preventDefault();
-  id = event.target.getAttribute('data-delId');
-  console.log(id)
-  toggleModal();
-  return id;
+  const idAtt = event.target.closest('button').getAttribute('id');
+  if(idAtt === 'deleteBtn') {
+    id = event.target.getAttribute('data-delId');
+    console.log(id)
+    toggleModal();
+    return id;
+  }
 });
 
 window.onclick = function(event) {

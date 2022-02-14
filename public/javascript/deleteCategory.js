@@ -39,6 +39,6 @@ delCatBtn.addEventListener('click', (event)=> {
 window.onclick = function(event) {
     console.log(event)
   if (event.target === deleteCatModal) {
-    deleteModal.classList.toggle('hidden')
+    deleteCatModal.classList.toggle('hidden')
   }
 }
