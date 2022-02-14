@@ -29,6 +29,7 @@ document.querySelector('#cancel-delete').addEventListener('click', toggleModal);
 //toggle modal on clicking delete button
 delBtn.addEventListener('click', (event)=> {
   event.preventDefault();
+  event.stopPropagation();
   const idAtt = event.target.closest('button').getAttribute('id');
   if(idAtt === 'deleteBtn') {
     id = event.target.getAttribute('data-delId');

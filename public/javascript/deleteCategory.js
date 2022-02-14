@@ -4,8 +4,7 @@ const confirmDtlBtn = document.querySelector('#confirmCat-delete')
 let catId = '';
 
 // allows user to target a specific solution to delete
-async function deleteCatButtonHandler() {
-  console.log('delete', catId);
+async function deleteCatButtonHandler(event) {
   const response = await fetch(`/api/categories/${catId}`, {
     method: 'DELETE'
   });
@@ -18,7 +17,7 @@ async function deleteCatButtonHandler() {
 }
 
 //toggle modal visibility
-function toggleModal() {
+function toggleCatModal() {
   deleteCatModal.classList.toggle('hidden')
 }
 
@@ -26,20 +25,20 @@ function toggleModal() {
 confirmDtlBtn.addEventListener('click', deleteCatButtonHandler);
 
 // cancel-delete
-document.querySelector('#cancelCat-delete').addEventListener('click', toggleModal);
+document.querySelector('#cancelCat-delete').addEventListener('click', toggleCatModal);
 
 //toggle modal on clicking delete button
 delCatBtn.addEventListener('click', (event)=> {
   event.preventDefault();
   catId = event.target.getAttribute('data-delId');
   console.log(catId)
-  toggleModal();
+  toggleCatModal();
   return catId;
 });
 
 window.onclick = function(event) {
     console.log(event)
   if (event.target === deleteCatModal) {
-    deleteCatModal.classList.toggle('hidden')
+    deleteModal.classList.toggle('hidden')
   }
 }
