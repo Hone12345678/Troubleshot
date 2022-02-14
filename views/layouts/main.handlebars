@@ -7,7 +7,7 @@
   {{!--
   <link href="../dist/output.css" rel="stylesheet"> --}}
   <link href="/dist/output.css" rel="stylesheet">
- </head>
+</head>
 
 <body class="bg-slate-800">
 
@@ -24,7 +24,8 @@
         </div>
         {{#if loggedIn}}
         <div class="pr-32 xs:justify-center align-middle hover:opacity-50">
-          <button id="addCategory"><img src="https://img.icons8.com/nolan/40/add.png" data-toggle="modal" data-dismiss="modal"/></button>
+          <button id="addCategory"><img src="https://img.icons8.com/nolan/40/add.png" data-toggle="modal"
+              data-dismiss="modal" /></button>
         </div>
         {{else}}
         <div class="pr-32 xs:justify-center align-middle hover:opacity-50">
@@ -42,32 +43,63 @@
     </div>
     {{/if}}
 
-</header>
+  </header>
 
   <!-- Page Navigation -->
   <main class="lg:flex justify center min-h-screen relative space-y-4  ">
-    {{!-- <div id="addCategory-modal" class="modal" style="display:none"> --}}
-      <div id="addCategory-modal" class="modal hidden fixed p-8  backdrop-blur-md bg-white/30 inset-1 m-28 z-50">
-        <div class="relative mx-auto border w-96 shadow-lg rounded-md border-slate-500">
-          <form class=" relative addCategory-form p-8 bg-slate-800 border-2 border-slate-500 shadow-xl rounded-md " id="addCategory-form">
-            <div>
-              <label class="space-y-4 text-slate-400 text-xl" for="category">What would you like your category to be called?</label>
-              <input class="class=space-y-4" type="text" id="category" maxlength="20"/>
-            </div>
-            <div>
-              <button id="modal-addCategory-btn" class="justify-self-center bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded transition ease-in-out delay-150 mr-4  m-w-xs  hover:-translate-y-1 hover:scale-110 hover:mr-4 m-w-xs  duration-300" type="submit" data-toggle="modal" data-dismiss="modal">Create</button>
-            </div>
-          </form>
-        </div>
+    {{!-- add category modal --}}
+    <div id="addCategory-modal" class="modal plcae-content-center hidden fixed p-8 backdrop-blur-md bg-white/30 inset-1 m-28 z-50">
+      <div class="relative m-auto border w-96 shadow-lg rounded-md border-slate-500">
+        <form class=" relative addCategory-form p-8 bg-slate-800 border-2 border-slate-500 shadow-xl rounded-md "
+          id="addCategory-form">
+          <div>
+            <label class="space-y-4 text-slate-400 text-xl" for="category">What would you like your category to be
+              called?</label>
+            <input class="class=space-y-4" type="text" id="category" maxlength="20" />
+          </div>
+          <div>
+            <button id="modal-addCategory-btn"
+              class="justify-self-center bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded transition ease-in-out delay-150 mr-4  m-w-xs  hover:-translate-y-1 hover:scale-110 hover:mr-4 m-w-xs  duration-300"
+              type="submit" data-toggle="modal" data-dismiss="modal">Create</button>
+          </div>
+        </form>
       </div>
+    </div>
+    {{!-- confirm deletion modal solution--}}
+    <div id="deleteConfirm" class="modal hidden fixed p-8  backdrop-blur-md bg-white/30 inset-1 m-28 z-50">
+      <div class="relative mx-auto border w-96 shadow-lg bg-slate-800 rounded-md border-slate-500">
+        <label class="space-y-4 text-slate-400 text-xl" for="category">Are you sure you want to delete this
+          solution?</label>
+        <button id="confirm-delete"
+          class="justify-self-center bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded transition ease-in-out delay-150 mr-4  m-w-xs  hover:-translate-y-1 hover:scale-110 hover:mr-4 m-w-xs  duration-300"
+          type="submit" data-toggle="modal" data-dismiss="modal">Confirm</button>
+        <button id="cancel-delete"
+          class="justify-self-center bg-gray-300 hover:bg-red-700 px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded transition ease-in-out delay-150 mr-4  m-w-xs  hover:-translate-y-1 hover:scale-110 hover:mr-4 m-w-xs  duration-300"
+          type="submit" data-toggle="modal" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+    {{!-- confirm deletion modal category --}}
+    <div id="deleteCatConfirm" class="modal hidden fixed p-8  backdrop-blur-md bg-white/30 inset-1 m-28 z-50">
+      <div class="relative mx-auto border w-96 shadow-lg bg-slate-800 rounded-md border-slate-500">
+        <label class="space-y-4 text-slate-400 text-xl" for="category">Are you sure you want to delete this
+          Category?</label>
+        <button id="confirmCat-delete"
+          class="justify-self-center bg-red-500 hover:bg-red-700 px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded transition ease-in-out delay-150 mr-4  m-w-xs  hover:-translate-y-1 hover:scale-110 hover:mr-4 m-w-xs  duration-300"
+          type="submit" data-toggle="modal" data-dismiss="modal">Confirm</button>
+        <button id="cancelCat-delete"
+          class="justify-self-center bg-gray-300 hover:bg-red-700 px-1 text-sm m-w-xs text-white border-2 border-stone-900 rounded transition ease-in-out delay-150 mr-4  m-w-xs  hover:-translate-y-1 hover:scale-110 hover:mr-4 m-w-xs  duration-300"
+          type="submit" data-toggle="modal" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
     {{{ body }}}
   </main>
 
   {{#if loggedIn}}
-    <script src="/javascript/logout.js"></script>
-    <script src="/javascript/addCategory.js"></script>
-    <script src="/javascript/categoryBtns.js"></script>
-    <script src="/javascript/quickSearch.js"></script>
+  <script src="/javascript/logout.js"></script>
+  <script src="/javascript/addCategory.js"></script>
+  <script src="/javascript/categoryBtns.js"></script>
+  <script src="/javascript/quickSearch.js"></script>
+  <script src="/javascript/deleteSolution.js"></script>
   {{/if}}
 </body>
 

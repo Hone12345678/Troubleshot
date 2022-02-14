@@ -8,8 +8,6 @@ async function editButtonHandler(event) {
 
   const id = splitId.split("-")[1];
 
-  console.log(id);
-
   document.location.assign(`http://localhost:3001/api/solutions/edit/${id}`);
 }
 

@@ -1,9 +1,7 @@
+const { reject } = require('bcrypt/promises');
 const { Category, Solution } = require('../models');
 const withAuth = require('../utils/auth')
 const router = require('express').Router();
-
-
-
 
 router.get('/', withAuth, async (req, res) => {
   //perform multiple queries in one get request using async/await
@@ -206,6 +204,7 @@ router.get('/by-category/:catId', withAuth, async (req, res) => {
     const sol = solutionQuery.map(array => array.get({ plain: true }));
     //send the new arrays to the homepage to be displayed on the home page
     res.render('byCategory', {
+      catId: req.params.catId,
       categories,
       sol, 
       loggedIn: req.session.loggedIn
