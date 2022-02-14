@@ -10,7 +10,7 @@ async function selectSolutionHandler(event) {
   let newView = toNumber+1
 
 if (solutionId === 'deleteBtn' || solutionId === 'edit-btn'){
-return
+return;
 } 
 
   const response = await fetch(`/api/solutions/${solutionId}`, {
