@@ -8,7 +8,7 @@ async function editButtonHandler(event) {
 
   const id = splitId.split("-")[1];
 
-  document.location.assign(`http://localhost:3001/api/solutions/edit/${id}`);
+  document.location.replace(`/api/solutions/edit/${id}`);
 }
 
 document.querySelector('#edit-btn').addEventListener('click', editButtonHandler);
