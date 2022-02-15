@@ -20,9 +20,12 @@ router.get('/', withAuth, async (req, res) => {
       where: {
         user_id: req.session.user_id
       },
-      limit: 3,
+      limit: 5,
       attributes: [
-        'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
+        'id', 'name', 'solution', 'priority', 'category_id', 'user_id', 'page_views'
+      ],
+      order: [
+        ['priority', 'DESC']
       ]
     });
 
@@ -63,7 +66,7 @@ router.get('/recent-post', withAuth, async (req, res) => {
       },
       limit: 5,
       attributes: [
-        'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
+        'id', 'name', 'solution', 'priority', 'category_id', 'user_id', 'page_views'
       ],
       order: [
         ['created_at', 'DESC']
@@ -107,7 +110,7 @@ router.get('/most-viewed', withAuth, async (req, res) => {
       },
       limit: 5,
       attributes: [
-        'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
+        'id', 'name', 'solution', 'priority', 'category_id', 'user_id', 'page_views'
       ],
       order: [
         ['page_views', 'DESC']
@@ -145,13 +148,13 @@ router.get('/highest-priority', withAuth, async (req, res) => {
     });
     const solutionQuery = await Solution.findAll({
       // ***********once we can add solutions to new users we need to update the where statement*****
-      //query for the top 3 results
+      //query for the top 5 results
        where: {
         user_id: req.session.user_id
       },
-      limit: 3,
+      limit: 5,
       attributes: [
-        'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
+        'id', 'name', 'solution', 'priority', 'category_id', 'user_id', 'page_views'
       ],
       order: [
         ['priority', 'DESC']
@@ -195,7 +198,7 @@ router.get('/by-category/:catId', withAuth, async (req, res) => {
         category_id: req.params.catId
       },
       attributes: [
-        'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
+        'id', 'name', 'solution', 'priority', 'category_id', 'user_id', 'page_views'
       ],
     });
 
@@ -277,7 +280,7 @@ router.get('/search-category/:search', withAuth, async (req, res) => {
         name: req.params.search,
       },
       attributes: [
-        'id', 'name', 'solution', 'priority', 'category_id', 'user_id'
+        'id', 'name', 'solution', 'priority', 'category_id', 'user_id', 'page_views'
       ],
     });
 

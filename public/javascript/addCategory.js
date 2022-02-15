@@ -2,10 +2,19 @@
 const modal = document.getElementById('addCategory-modal');
 const addCat = document.querySelector('#addCategory')
 
+function toggleCatAddModal() {
+  modal.classList.toggle('hidden')
+}
+
 async function createCategoryHandler(event) {
   event.preventDefault();
 
 const category = document.querySelector('#category').value.trim();
+
+if (!category) {
+  alert('You must enter a category name!')
+  return;
+}
 
 const response = await fetch(`/api/categories`, {
     method: 'POST',
@@ -25,6 +34,8 @@ const response = await fetch(`/api/categories`, {
   }
 }
 
+// cancel-delete
+document.querySelector('#cancelCat-add').addEventListener('click', toggleCatAddModal);
 document.querySelector('#modal-addCategory-btn').addEventListener('click', createCategoryHandler);
 
 addCat.addEventListener('click', () => {modal.classList.toggle('hidden')});
