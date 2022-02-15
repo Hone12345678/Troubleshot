@@ -9,7 +9,7 @@ async function selectSolutionHandler(event) {
   let toNumber = pageViews++
   let newView = toNumber+1
 
-if (solutionId === 'deleteBtn' || solutionId === 'edit-btn'){
+if (solutionId === 'deleteBtn' || solutionId === 'edit-btn' || solutionId === 'oneSolution'){
 return;
 } 
 

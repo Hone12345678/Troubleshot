@@ -516,6 +516,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: auto;
 }
 
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .mr-4 {
   margin-right: 1rem;
 }
@@ -615,6 +620,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .animate-pulse-slow {
   -webkit-animation: pulse 2s ease-in-out infinite;
           animation: pulse 2s ease-in-out infinite;
+}
+
+.cursor-default {
+  cursor: default;
 }
 
 .flex-col {
@@ -1016,6 +1025,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-slate-700 {
   --tw-text-opacity: 1;
   color: rgb(51 65 85 / var(--tw-text-opacity));
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .underline {

@@ -1,7 +1,7 @@
 {{!-- Single Solution Page --}}
 {{#each this}}
 {{!-- Content Area --}}
-<div class=" justify-self-center">
+<button class=" justify-self-center cursor-default" id="oneSolution">
   <div id="{{id}}" data-catId="{{category_id}}" data-views="{{page_views}}" class="flex flex-wrap px-2 shadow-inner rounded bg-slate-700 border border-slate-500 lg:w-72rem md:w-32rem">
     <h2 class="text-center underline text-zinc-300 font-bold text-2xl w-full">{{capitalize_first name}}</h2>
     <pre style="white-space: pre-wrap" class="text-slate-200 break-words pt-4 w-full">{{solution}}</pre>
@@ -20,7 +20,5 @@
     Edit
   </button>
 </div>
-</div>
+</button>
 {{/each}} 
-
-  <script src="/javascript/deleteSolution.js"></script>

@@ -327,7 +327,7 @@ router.get('/by-solution/:id', withAuth, async (req, res) => {
       ]
     });
     let viewCount = solutionQuery[0].dataValues.page_views + 1
-    await console.log(viewCount)
+    
     await Solution.update(req.body, {
       where: {
         user_id: req.session.user_id,

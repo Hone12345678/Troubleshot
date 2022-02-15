@@ -31,14 +31,12 @@ document.querySelector('#cancelCat-delete').addEventListener('click', toggleCatM
 delCatBtn.addEventListener('click', (event)=> {
   event.preventDefault();
   categoryIdToDelete = event.target.closest('button').getAttribute('data-delId');
-  console.log(categoryIdToDelete)
   toggleCatModal();
   return categoryIdToDelete;
 });
 
 window.onclick = function(event) {
-    console.log(event)
   if (event.target === deleteCatModal) {
-    deleteModal.classList.toggle('hidden')
+    deleteCatModal.classList.toggle('hidden')
   }
 }
