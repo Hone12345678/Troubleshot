@@ -202,10 +202,16 @@ router.get('/by-category/:catId', withAuth, async (req, res) => {
     //use .map() method on query arrays so that we only get values from table
     const categories = categoryQuery.map(array => array.get({ plain: true }));
     const sol = solutionQuery.map(array => array.get({ plain: true }));
+    const selectedCategory = categories.filter(category => {
+      return category.id == req.params.catId
+    });
+
+
     //send the new arrays to the homepage to be displayed on the home page
     res.render('byCategory', {
       catId: req.params.catId,
       categories,
+      selectedCategory: selectedCategory[0],
       sol, 
       loggedIn: req.session.loggedIn
     })
