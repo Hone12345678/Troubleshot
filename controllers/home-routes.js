@@ -1,7 +1,7 @@
-const { reject } = require('bcrypt/promises');
 const { Category, Solution } = require('../models');
 const withAuth = require('../utils/auth')
 const router = require('express').Router();
+const { Op } = require('sequelize');
 
 router.get('/', withAuth, async (req, res) => {
   //perform multiple queries in one get request using async/await
@@ -267,7 +267,9 @@ router.get('/search-category/:search', withAuth, async (req, res) => {
     const categoryQuery = await Category.findAll({
       where: {
         user_id: req.session.user_id,
-        category_name: searchTerm,
+        category_name: {
+          [Op.like]: `%${searchTerm}%`
+          }
       },
       attributes: [
         'category_name', 'id'
@@ -277,7 +279,9 @@ router.get('/search-category/:search', withAuth, async (req, res) => {
       // ***********once we can add solutions to new users we need to update the where statement*****
       //query for the top 3 results
       where: {
-        name: req.params.search,
+        name: {
+          [Op.like]: `%${searchTerm}%`
+          }
       },
       attributes: [
         'id', 'name', 'solution', 'priority', 'category_id', 'user_id', 'page_views'
