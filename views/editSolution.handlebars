@@ -34,11 +34,13 @@
   <label class="text-center pr-5 text-zinc-300 text-2xl" for="category_id">Category: </label>
   <select name="category_id" id="category_id" class="bg-gray-200 text-center" placeholder="Solution Category">
     <option value="{{this.category.id}}">{{this.category.category_name}}</option>
+    {{/with}}
     {{> dropdown-category categories }}
   </select>
   </div>
 
   {{!-- Create Solution Button --}}
+  {{#with sol}}
   <div class="flex justify-center h-10 align-center">
     <button class="mr-4 font-bold bg-sky-600 hover:bg-sky-800 px-2 text-lg m-w-xs text-zinc-300 rounded-xl border-2 border-stone-90" id="save-btn" type="submit">Save Changes</button>
     <button data-catSol="{{this.category_id}}-{{this.id}}" class="mr-4 font-bold bg-gray-300 hover:bg-sky-800 px-2 text-lg m-w-xs text-slate-700 rounded-xl border-2 border-stone-90" id="cancel-btn" type="submit">Cancel Changes</button>
