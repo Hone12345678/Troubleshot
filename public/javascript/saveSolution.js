@@ -25,7 +25,7 @@ const response = await fetch(`/api/solutions/${id}`, {
   );
 
   if (response.ok) {
-    document.location.assign(`http://localhost:3001/by-solution/${category_id}-${id}`);
+    document.location.replace(`/by-solution/${category_id}-${id}`);
   } else {
     alert(response.statusText);
   }
