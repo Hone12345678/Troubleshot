@@ -16,6 +16,9 @@ module.exports = {
         '32rem': '32rem',
         '72rem': '72rem',
       },
+      spacing: {
+        '65rem': '65rem',
+      },
       screens: {
         'xs': '325px',
         'sm': '640px',
