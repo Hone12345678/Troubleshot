@@ -9,7 +9,6 @@ async function saveSolutionHandler(event) {
   const priority = document.querySelector('#priority').value.trim();
   const category_id = document.querySelector('#category_id').value.trim();
 
-  console.log("id:", category_id);
   
 const response = await fetch(`/api/solutions/${id}`, {
     method: 'PUT',
@@ -36,7 +35,6 @@ async function cancelButton(event) {
   event.preventDefault();
 
   const byCat = event.target.closest('button').getAttribute('data-catSol');
-  console.log(byCat);
   document.location.replace(`/by-solution/${byCat}`)
 }
 

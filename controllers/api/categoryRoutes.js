@@ -33,7 +33,6 @@ router.get("/:id", withAuth, (req, res) => {
 
 //create a new category
 router.post("/", withAuth, (req, res) => {
-  console.log('---------hello--------');
   req.body.user_id = req.session.user_id;
   Category.create(req.body, {
     category_name: req.body.category_name,

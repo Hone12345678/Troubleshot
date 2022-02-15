@@ -33,7 +33,6 @@ delBtn.addEventListener('click', (event)=> {
   const idAtt = event.target.closest('button').getAttribute('id');
   if(idAtt === 'deleteBtn') {
     id = event.target.getAttribute('data-delId');
-    console.log(id)
     toggleModal();
     return id;
   }

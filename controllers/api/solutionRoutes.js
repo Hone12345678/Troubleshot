@@ -111,7 +111,6 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     const solutions = solutionQuery.map(array => array.get({ plain: true }));
     const sol = solutions[0];
     //send the new arrays to the homepage to be displayed on the home page
-    console.log("solution",sol);
     res.render('editSolution', {
       categories,
       sol, 
