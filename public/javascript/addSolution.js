@@ -9,6 +9,15 @@ async function createSolutionHandler(event) {
   const priority = document.querySelector('#priority').value.trim();
   const category_id = document.querySelector('#category_id').value.trim();
   const user_id = document.querySelector('#categoryBtnNav button').getAttribute('data-');
+
+  if (!name) {
+    alert('You must enter a solution title!')
+    return;
+  }
+  else if (!solution) {
+    alert('You must enter a solution body!')
+    return;
+  }
   
 const response = await fetch(`/api/solutions`, {
     method: 'POST',
