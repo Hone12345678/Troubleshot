@@ -279,6 +279,7 @@ router.get('/search-category/:search', withAuth, async (req, res) => {
       // ***********once we can add solutions to new users we need to update the where statement*****
       //query for the top 3 results
       where: {
+        user_id: req.session.user_id,
         name: {
           [Op.like]: `%${searchTerm}%`
           }
